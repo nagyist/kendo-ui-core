@@ -3,8 +3,8 @@ title: Overview
 page_title: Overview - Team Efficiency Dashboard Tutorial
 description: "Start building the Team Efficiency Dashboard application by using Progress Telerik UI for ASP.NET MVC."
 slug: overview_timeefficiencyapp_aspnetmvc6
-previous_url: /tutorials/tutorial-aspnetmvc-quick-start/chapter0
-position: 1
+previous_url: /tutorials/quickstart/overview, /tutorials/quickstart/team-efficiency, /tutorials/tutorial-aspnetmvc-quick-start/chapter0
+position: 0
 ---
 
 # Overview
@@ -44,13 +44,13 @@ However, the Telerik UI for ASP.NET MVC wrappers provide additional capabilities
 
 ## Next Steps
 
-* [Chapter 1: Getting Up and Running]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#getting-up-and-running)
-* [Chapter 2: Input Controls]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#input-controls)
-* [Chapter 3: Scaffolding]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#scaffolding)
-* [Chapter 4: Add and Configure the Kendo UI Grid]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#kendo-ui-grid)
-* [Chapter 5: Add and Configure the Kendo UI ListView]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#kendo-ui-listview)
-* [Chapter 6: Manage the Client Side]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#client-side)
-* [Chapter 7: Handle the Kendo UI Datasource]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#kendo-ui-datasource)
-* [Chapter 8: Add and Configure the Kendo UI Charts]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#kendo-ui-charts)
-* [Chapter 9: Make the Application Responsive]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#go-responsive)
-* [Chapter 10: Add and Configure the Kendo UI Themes]({% slug gettingupandrunning_timeefficiencyapp_aspnetmvc6 %}#kendo-ui-themes)
+* [Step 1: Getting Up and Running](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/gettingupandrunning)
+* [Step 2: Input Controls](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/input-controls)
+* [Step 3: Scaffolding](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/scaffolding)
+* [Step 4: Add and Configure the Telerik UI Grid](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/telerikui-grid)
+* [Step 5: Add and Configure the Telerik UI ListView](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/telerikui-listview)
+* [Step 6: Manage the Client Side](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/client-side)
+* [Step 7: Handle the Telerik UI Datasource](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/telerikui-datasource)
+* [Step 8: Add and Configure the Telerik UI Charts](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/telerikui-charts)
+* [Step 9: Make the Application Responsive](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/go-responsive)
+* [Step 10: Add and Configure the Kendo UI Themes](https://docs.telerik.com/aspnet-mvc/getting-started/build-team-efficiency-dashboard/kendoui-themes)
