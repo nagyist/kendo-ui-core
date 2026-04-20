@@ -5280,8 +5280,7 @@ declare namespace kendo.ui {
         text?: string | undefined;
     }
 
-    interface DropDownButtonPopup {
-        appendTo?: string | undefined;
+    interface DropDownButtonPopup extends PopupOptions {
     }
 
     interface DropDownButtonMessages {
@@ -10825,7 +10824,6 @@ declare namespace kendo.ui {
         editor?: string | Function | undefined;
         editorOptions?: Object | undefined;
         field?: string | undefined;
-        fieldType?: string | undefined;
         format?: string | undefined;
         group?: string | undefined;
         items?: Array<PropertyGridItem> | undefined;
@@ -12052,8 +12050,7 @@ declare namespace kendo.ui {
         text?: string | undefined;
     }
 
-    interface SplitButtonPopup {
-        appendTo?: string | undefined;
+    interface SplitButtonPopup extends PopupOptions {
     }
 
     interface SplitButtonMessages {
@@ -15063,7 +15060,7 @@ declare namespace kendo.ui {
         restore(): kendo.ui.Window;
         setOptions(options: any): void;
         title(): string;
-        title(text?: string): kendo.ui.Window;
+        title(text: string | boolean | WindowTitle): kendo.ui.Window;
         toFront(): kendo.ui.Window;
         toggleMaximization(): kendo.ui.Window;
         unpin(): void;
@@ -15110,6 +15107,11 @@ declare namespace kendo.ui {
         iframe?: boolean | undefined;
     }
 
+    interface WindowTitle {
+        text?: string | undefined;
+        encoded?: boolean | undefined;
+    }
+
     interface WindowDraggable {
         containment?: any | string | undefined;
         dragHandle?: any | string | undefined;
@@ -15136,7 +15138,7 @@ declare namespace kendo.ui {
         resizable?: boolean | undefined;
         scrollable?: boolean | undefined;
         themeColor?: string | undefined;
-        title?: string | boolean | undefined;
+        title?: string | boolean | WindowTitle | undefined;
         visible?: boolean | undefined;
         width?: number | string | undefined;
         size?: string | undefined;

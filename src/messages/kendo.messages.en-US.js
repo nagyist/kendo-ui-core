@@ -1509,6 +1509,15 @@ $.extend(true, kendo.spreadsheet.messages.view,{
     "home": "Home",
     "insert": "Insert",
     "data": "Data"
+  },
+  "sheetBar": {
+    "addSheet": "Add new sheet",
+    "deleteSheet": "Delete",
+    "duplicateSheet": "Duplicate",
+    "renameSheet": "Rename",
+    "hideSheet": "Hide",
+    "moveRight": "Move Right",
+    "moveLeft": "Move Left"
   }
 });
 }

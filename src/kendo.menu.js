@@ -1518,6 +1518,10 @@ export const __meta__ = {
             var target = $(kendo.eventTarget(e) || e.target).closest(allItemsSelector),
                 isEnter = e.type == MOUSEENTER || MOUSEDOWN.indexOf(e.type) !== -1;
 
+            if (this._scrollingToItem && isEnter && !target.hasClass(FOCUSEDSTATE)) {
+                return;
+            }
+
             target.siblings().removeClass(HOVERSTATE);
 
             if (!target.parents("li." + DISABLEDSTATE).length) {
@@ -1649,6 +1653,10 @@ export const __meta__ = {
             var popupId = element.data(POPUP_OPENER_ATTR) || element.closest(popupSelector).data(POPUP_ID_ATTR);
             var pointerTouch = isPointerTouch(e);
             var isParentClosing = false;
+
+            if (that._scrollingToItem && !element.hasClass(FOCUSEDSTATE)) {
+                return;
+            }
 
             if (that._denyOpening) {
                 return;
@@ -2235,6 +2243,7 @@ export const __meta__ = {
         _scrollToItem: function(item) {
             var that = this;
             if (that.options.scrollable && item && item.length) {
+                var pointerTriggeredFocus = that._pointerTriggeredFocus;
                 var ul = item.parent();
                 var isHorizontal = ul.hasClass(MENU) ? that.options.orientation == "horizontal" : false;
                 var scrollDir = isHorizontal ? "scrollLeft" : "scrollTop";
@@ -2256,7 +2265,17 @@ export const __meta__ = {
                 if (!isNaN(itemPosition)) {
                     var scrolling = {};
                     scrolling[scrollDir] = itemPosition;
-                    ul.finish().animate(scrolling, "fast", "linear", function() {
+                    ul.finish();
+                    clearTimeout(that._scrollingToItemTimeout);
+                    that._scrollingToItem = true;
+                    ul.animate(scrolling, "fast", "linear", function() {
+                        if (pointerTriggeredFocus) {
+                            that._scrollingToItemTimeout = setTimeout(function() {
+                                that._scrollingToItem = false;
+                            }, that.options.hoverDelay);
+                        } else {
+                            that._scrollingToItem = false;
+                        }
                         that._toggleScrollButtons(ul, scrollButtons.first(), scrollButtons.last(), isHorizontal);
                     });
                 }
@@ -2308,7 +2327,9 @@ export const __meta__ = {
             }
 
             setTimeout(function() {
+                that._pointerTriggeredFocus = true;
                 that._moveFocus([], item);
+                that._pointerTriggeredFocus = false;
                 if (item.children(".k-content")[0]) {
                     item.parent().closest(".k-item").removeClass(FOCUSEDSTATE);
                 }
@@ -3034,4 +3055,3 @@ export const __meta__ = {
 
 })(window.kendo.jQuery);
 export default kendo;
-
