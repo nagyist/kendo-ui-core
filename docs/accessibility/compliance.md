@@ -35,30 +35,39 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 |ActionSheet   |AA | [Demo](https://demos.telerik.com/kendo-ui/accessibility/actionsheet)| [Documentation](https://docs.telerik.com/kendo-ui/controls/actionsheet/accessibility/overview)|
 |AIPrompt      |AA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/aiprompt/accessibility/overview)|
 |AppBar	       |AA | [Demo](https://demos.telerik.com/kendo-ui/accessibility/appbar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/appbar/accessibility/overview)|
+|ArcGauge      |AA | [Demo](https://demos.telerik.com/kendo-ui/accessibility/arcgauge)| [Documentation](https://docs.telerik.com/kendo-ui/controls/arcgauge/accessibility/overview)|
 |AutoComplete  |AA | [Demo](https://demos.telerik.com/kendo-ui/accessibility/autocomplete)| [Documentation](https://docs.telerik.com/kendo-ui/controls/autocomplete/accessibility/overview)|
 |Avatar        |AA | [Demo](https://demos.telerik.com/kendo-ui/accessibility/avatar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/avatar/accessibility/overview)|
-|BarCode	   |AAA| [Demo](https://demos.telerik.com/kendo-ui/accessibility/barcode)| n/a|
+|Badge         |n/a| n/a| n/a|
+|BarCode	   |AAA| [Demo](https://demos.telerik.com/kendo-ui/accessibility/barcode)| [Documentation](https://docs.telerik.com/kendo-ui/controls/barcode/accessibility/overview)|
 |BottomNavigation |n/a |[Demo](https://demos.telerik.com/kendo-ui/accessibility/bottomnavigation)| [Documentation](https://docs.telerik.com/kendo-ui/controls/bottomnavigation/accessibility/overview)|
 |Breadcrumb	   |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/breadcrumb)| [Documentation](https://docs.telerik.com/kendo-ui/controls/breadcrumb/accessibility/overview)|
 |Button 	   |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/button)| [Documentation](https://docs.telerik.com/kendo-ui/controls/button/accessibility/overview)|
 |ButtonGroup   |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/buttongroup)| [Documentation](https://docs.telerik.com/kendo-ui/controls/buttongroup/accessibility/overview)|
 |Calendar	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/calendar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/calendar/accessibility/overview)|
 |Captcha       |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/captcha)| [Documentation](https://docs.telerik.com/kendo-ui/controls/captcha/accessibility/overview)|
+|Chart Wizard  |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/chartwizard)| [Documentation](https://docs.telerik.com/kendo-ui/controls/chartwizard/accessibility/overview)|
 |Charts        |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/chart)| [Documentation](https://docs.telerik.com/kendo-ui/controls/charts/accessibility/overview)|
 |Chat          |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/chat)| [Documentation](https://docs.telerik.com/kendo-ui/controls/chat/accessibility/overview)|
 |CheckBox      |AA |n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/checkbox/accessibility/overview)|
 |CheckBoxGroup |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/checkboxgroup)| [Documentation](https://docs.telerik.com/kendo-ui/controls/checkboxgroup/accessibility/overview)|
-|CircularGauge |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/circulargauge)| n/a|
+|Chip          |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/chip)| [Documentation](https://docs.telerik.com/kendo-ui/controls/chip/accessibility/overview)|
+|ChipList      |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/chiplist)| [Documentation](https://docs.telerik.com/kendo-ui/controls/chiplist/accessibility/overview)|
+|CircularGauge |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/circulargauge)| [Documentation](https://docs.telerik.com/kendo-ui/controls/circulargauge/accessibility/overview)|
+|CircularProgressBar |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/circularprogressbar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/circularprogressbar/accessibility/overview)|
 |ColorGradient |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/colorgradient)| [Documentation](https://docs.telerik.com/kendo-ui/controls/colorgradient/accessibility/overview)|
 |ColorPalette  |n/a  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/colorpalette)| [Documentation](https://docs.telerik.com/kendo-ui/controls/colorpalette/accessibility/overview)|
 |ColorPicker   |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/colorpicker)| [Documentation](https://docs.telerik.com/kendo-ui/controls/colorpicker/accessibility/overview)|
 |ComboBox      |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/combobox)| [Documentation](https://docs.telerik.com/kendo-ui/controls/combobox/accessibility/overview)|
+|ContextMenu   |AA  | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/menu/contextmenu/accessibility/overview)|
 |DateInput	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/dateinput)| [Documentation](https://docs.telerik.com/kendo-ui/controls/dateinput/accessibility/overview)|
 |DatePicker	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/datepicker)| [Documentation](https://docs.telerik.com/kendo-ui/controls/datepicker/accessibility/overview)|
+|DateRangePicker |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/daterangepicker)| [Documentation](https://docs.telerik.com/kendo-ui/controls/daterangepicker/accessibility/overview)|
 |DateTimePicker|AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/datetimepicker)| [Documentation](https://docs.telerik.com/kendo-ui/controls/datetimepicker/accessibility/overview)|
-|Diagram	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/diagram)| n/a|
+|Diagram	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/diagram)| [Documentation](https://docs.telerik.com/kendo-ui/controls/diagram/accessibility/overview)|
 |Dialog	       |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/dialog)| [Documentation](https://docs.telerik.com/kendo-ui/controls/dialog/accessibility/overview)|
-|DockManager   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/dockmanager)| n/a|
+|DockManager   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/dockmanager)| [Documentation](https://docs.telerik.com/kendo-ui/controls/dockmanager/accessibility/overview)|
+|Drag and Drop |n/a | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/draganddrop/accessibility/overview)|
 |Drawer	       |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/drawer)| [Documentation](https://docs.telerik.com/kendo-ui/controls/drawer/accessibility/overview)|
 |DropDownButton|AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/dropdownbutton)| [Documentation](https://docs.telerik.com/kendo-ui/controls/dropdownbutton/accessibility/overview)|
 |DropDownList  |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/dropdownlist)| [Documentation](https://docs.telerik.com/kendo-ui/controls/dropdownlist/accessibility/overview)|
@@ -73,40 +82,49 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 |Gantt         |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/gantt)| [Documentation](https://docs.telerik.com/kendo-ui/controls/gantt/accessibility/overview)|
 |Grid          |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/grid)| [Documentation](https://docs.telerik.com/kendo-ui/controls/grid/accessibility/overview)|
 |ImageEditor   |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/imageeditor)| [Documentation](https://docs.telerik.com/kendo-ui/controls/imageeditor/accessibility/overview)|
-|LinearGauge   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/lineargauge)| n/a|
+|InlineAIPrompt |AAA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/inline-aiprompt/accessibility/overview)|
+|LinearGauge   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/lineargauge)| [Documentation](https://docs.telerik.com/kendo-ui/controls/lineargauge/accessibility/overview)|
 |ListBox       |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/listbox)| [Documentation](https://docs.telerik.com/kendo-ui/controls/listbox/accessibility/overview)|
 |ListView	   |AAA|[Demo](https://demos.telerik.com/kendo-ui/accessibility/listview)| [Documentation](https://docs.telerik.com/kendo-ui/controls/listview/accessibility/overview)|
 |Loader        |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/loader)| [Documentation](https://docs.telerik.com/kendo-ui/controls/loader/accessibility/overview)|
-|Map	       |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/map)| n/a|
+|Map	       |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/map)| [Documentation](https://docs.telerik.com/kendo-ui/controls/map/accessibility/overview)|
 |MaskedTextbox |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/maskedtextbox)| [Documentation](https://docs.telerik.com/kendo-ui/controls/maskedtextbox/accessibility/overview)|
 |MediaPlayer   |n/a|[Demo](https://demos.telerik.com/kendo-ui/accessibility/mediaplayer)| [Documentation](https://docs.telerik.com/kendo-ui/controls/mediaplayer/accessibility/overview)|
 |Menu          |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/menu)| [Documentation](https://docs.telerik.com/kendo-ui/controls/menu/accessibility/overview)|
 |MultiColumnComboBox |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/multicombobox)| [Documentation](https://docs.telerik.com/kendo-ui/controls/multicolumncombobox/accessibility/overview)|
 |MultiSelect   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/multiselect)| [Documentation](https://docs.telerik.com/kendo-ui/controls/multiselect/accessibility/overview)|
+|MultiViewCalendar |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/multiviewcalendar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/multiviewcalendar/accessibility/overview)|
 |Notification  |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/notification)| [Documentation](https://docs.telerik.com/kendo-ui/controls/notification/accessibility/overview)|
 |NumericTextbox|AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/numerictextbox)| [Documentation](https://docs.telerik.com/kendo-ui/controls/numerictextbox/accessibility/overview)|
 |OrgChart	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/orgchart)| [Documentation](https://docs.telerik.com/kendo-ui/controls/orgchart/accessibility/overview)|
+|OTP Input     |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/otpinput)| [Documentation](https://docs.telerik.com/kendo-ui/controls/otpinput/accessibility/overview)|
 |Pager         |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/pager)| [Documentation](https://docs.telerik.com/kendo-ui/controls/pager/accessibility/overview)|
 |PanelBar	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/panelbar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/panelbar/accessibility/overview)|
 |PDFViewer	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/pdfviewer)| [Documentation](https://docs.telerik.com/kendo-ui/controls/pdfviewer/accessibility/overview)|
 |PivotGrid	   |n/a | n/a| n/a|
 |PivotGridV2   |n/a |n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/pivotgridv2/accessibility/overview)|
 |PopOver	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/popover)| [Documentation](https://docs.telerik.com/kendo-ui/controls/popover/accessibility/overview)|
-|Popup         |AA | n/a| n/a|
+|Popup         |AA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/popup/accessibility/overview)|
+|ProgressBar   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/progressbar)| [Documentation](https://docs.telerik.com/kendo-ui/controls/progressbar/accessibility/overview)|
+|PromptBox     |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/promptbox)| [Documentation](https://docs.telerik.com/kendo-ui/controls/promptbox/accessibility/overview)|
 |PropertyGrid  |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/propertygrid)| [Documentation](https://docs.telerik.com/kendo-ui/controls/propertygrid/accessibility/overview)|
-|QRCode	   	   |AAA|[Demo](https://demos.telerik.com/kendo-ui/accessibility/qrcode)| n/a|
-|RadialGauge   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/radialgauge)| n/a|
+|QRCode	   	   |AAA|[Demo](https://demos.telerik.com/kendo-ui/accessibility/qrcode)| [Documentation](https://docs.telerik.com/kendo-ui/controls/qrcode/accessibility/overview)|
+|RadialGauge   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/radialgauge)| [Documentation](https://docs.telerik.com/kendo-ui/controls/radialgauge/accessibility/overview)|
 |RadioButton   |AA  |n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/radiobutton/accessibility/overview)|
 |RadioGroup    |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/radiogroup)| [Documentation](https://docs.telerik.com/kendo-ui/controls/radiogroup/accessibility/overview)|
 |RangeSlider    |AA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/rangeslider/accessibility/overview)|
 |Rating    |AA | [Demo](https://demos.telerik.com/kendo-ui/accessibility/rating)| [Documentation](https://docs.telerik.com/kendo-ui/controls/rating/accessibility/overview)|
-|ResponsivePanel |AA |n/a| n/a|
+|ResponsivePanel |AA |n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/responsivepanel/accessibility/overview)|
+|Sankey Diagram |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/sankey)| n/a|
 |Scheduler	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/scheduler)| [Documentation](https://docs.telerik.com/kendo-ui/controls/scheduler/accessibility/overview)|
-|ScrollView	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/scrollview)| [Documentation](https://docs.telerik.com/kendo-ui/controls/scrollview/overview)|
-|SegmentedControl	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/segmentedcontrol)| [Documentation](https://docs.telerik.com/kendo-ui/controls/segmentedcontrol/overview)|
+|ScrollView	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/scrollview)| [Documentation](https://docs.telerik.com/kendo-ui/controls/scrollview/accessibility/overview)|
+|SegmentedControl	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/segmentedcontrol)| [Documentation](https://docs.telerik.com/kendo-ui/controls/segmentedcontrol/accessibility/overview)|
 |Signature	   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/signature)| [Documentation](https://docs.telerik.com/kendo-ui/controls/signature/accessibility/overview)|
-|SkeletonContainer	   |AAA | n/a| n/a|
+|SkeletonContainer	   |AAA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/skeletoncontainer/accessibility/overview)|
 |Slider	       |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/slider)| [Documentation](https://docs.telerik.com/kendo-ui/controls/slider/accessibility/overview)|
+|SmartPasteButton |AA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/smartpastebutton/accessibility/overview)|
+|Sortable      |AA | n/a| [Documentation](https://docs.telerik.com/kendo-ui/controls/sortable/accessibility/overview)|
+|SpeechToTextButton |AAA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/speechtotextbutton)| [Documentation](https://docs.telerik.com/kendo-ui/controls/speechtotextbutton/accessibility/overview)|
 |SplitButton   |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/splitbutton)| [Documentation](https://docs.telerik.com/kendo-ui/controls/splitbutton/accessibility/overview)|
 |Splitter      |AA |[Demo](https://demos.telerik.com/kendo-ui/accessibility/splitter)| [Documentation](https://docs.telerik.com/kendo-ui/controls/splitter/accessibility/overview)|
 |Spreadsheet   |AA  |[Demo](https://demos.telerik.com/kendo-ui/accessibility/spreadsheet)| [Documentation](https://docs.telerik.com/kendo-ui/controls/spreadsheet/accessibility/overview)|

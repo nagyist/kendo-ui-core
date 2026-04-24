@@ -32,11 +32,11 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 | ActionSheet           | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/actionsheet) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/actionsheet/accessibility/overview) |
 | AIPrompt              | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/aiprompt) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/conversational-ui/aiprompt/accessibility/overview) |
 | AppBar                | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/appbar) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/appbar/accessibility/overview) |
-| ArcGauge             | N/A     | N/A                   | N/A                         |
+| ArcGauge             | N/A     | N/A                   | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/gauges/arcgauge/accessibility/overview) |
 | AutoComplete         | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/autocomplete) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/autocomplete/accessibility/overview) |
 | Avatar               | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/avatar) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/layout/avatar/accessibility/overview) |
 | Badge                | N/A     | N/A                   | N/A                         |
-| Barcode              | N/A     | N/A                   | N/A                         |
+| Barcode              | N/A     | N/A                   | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/barcodes/barcode/accessibility/overview) |
 | BottomNavigation     | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/bottomnavigation) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/bottomnavigation/accessibility/overview) |
 | Breadcrumb           | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/breadcrumb) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/breadcrumb/accessibility/overview) |
 | Button               | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/button) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/button/accessibility/overview) |
@@ -50,7 +50,7 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 | CheckBoxGroup        | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/checkboxgroup) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/checkboxgroup/accessibility/overview) |
 | Chip                 | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/chip) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/chip/accessibility/overview) |
 | ChipList             | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/chiplist) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/chiplist/accessibility/overview) |
-| CircularGauge        | N/A     | N/A  | N/A   |
+| CircularGauge        | N/A     | N/A  | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/gauges/circulargauge/accessibility/overview) |
 | CircularProgressBar  | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/circularprogressbar) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/interactivity/circularprogressbar/accessibility/overview) |
 | ColorGradient        | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/colorgradient) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/colorgradient/accessibility/overview) |
 | ColorPalette         | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/colorpalette) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/colorpalette/accessibility/overview) |
@@ -61,7 +61,7 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 | DatePicker           | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/datepicker) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/datepicker/accessibility/overview) |
 | DateRangePicker      | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/daterangepicker) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/daterangepicker/accessibility/overview) |
 | DateTimePicker       | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/datetimepicker) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/datetimepicker/accessibility/overview) |
-| Diagram              | N/A     | N/A                   | N/A                         |
+| Diagram              | N/A     | N/A                   | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/diagrams-and-maps/diagram/accessibility/overview) |
 | Dialog               | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/dialog) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/layout/dialog/accessibility/overview) |
 | Drawer               | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/drawer) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/drawer/accessibility/overview) |
 | DropDownButton       | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/dropdownbutton) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/dropdownbutton/accessibility/overview) |
@@ -79,10 +79,10 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 | GridLayout          | N/A      | N/A                   | N/A                         |
 | ImageEditor         | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/imageeditor) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/imageeditor/accessibility/overview) |
 | InlineAIPrompt      | AAA     | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/inline-aiprompt) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/conversational-ui/inline-aiprompt/accessibility/overview) |
-| LinearGauge         | N/A      | N/A                   | N/A                         |
+| LinearGauge         | N/A      | N/A                   | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/gauges/lineargauge/accessibility/overview) |
 | ListBox             | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/listbox) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/listbox/accessibility/overview) |
 | ListView            | AAA     | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/listview) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/data-management/listview/accessibility/overview) |
-| Map                 | N/A      | N/A                   | N/A                         |
+| Map                 | N/A      | N/A                   | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/diagrams-and-maps/map/accessibility/overview) |
 | MaskedTextbox       | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/maskedtextbox) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/maskedtextbox/accessibility) |
 | MediaPlayer         | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/mediaplayer) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/media/mediaplayer/accessibility/overview) |
 | Menu                | AA      | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/menu) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/menu/accessibility/overview) |
@@ -100,17 +100,17 @@ Also check the [notes below the table](#accessibility-compliance-notes).
 | Popover | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/popover) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/layout/popover/accessibility/overview) |
 | ProgressBar | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/progressbar) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/interactivity/progressbar/accessibility/overview) |
 | PropertyGrid | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/propertygrid) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/data-management/propertygrid/accessibility/overview) |
-| QRCode | N/A | N/A | N/A |
-| RadialGauge | N/A | N/A | N/A |
+| QRCode | N/A | N/A | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/barcodes/qrcode/accessibility/overview) |
+| RadialGauge | N/A | N/A | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/gauges/radialgauge/accessibility/overview) |
 | RadioButton | AA | N/A | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/radiobutton/accessibility/overview) |
 | RadioGroup | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/radiogroup) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/radiogroup/accessibility/overview) |
 | Rating | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/rating) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/rating/accessibility/overview) |
 | Sankey Diagram | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/sankey) | N/A |
 | Scheduler | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/scheduler) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/scheduling/scheduler/accessibility/overview) |
-| ScrollView | N/A | N/A | N/A |
+| ScrollView | N/A | N/A | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/media/scrollview/accessibility/overview) |
 | SegmentedControl | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/segmentedcontrol) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/segmentedcontrol/accessibility/overview) |
 | Signature | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/signature) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/signature/accessibility/overview) |
-| SkeletonContainer | AAA | N/A | N/A |
+| SkeletonContainer | AAA | N/A | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/interactivity/skeletoncontainer/accessibility/overview) |
 | Slider | AA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/slider) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/editors/slider/accessibility/overview) |
 | Sortable | AA | N/A | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/interactivity/sortable/accessibility/overview) |
 | SpeechToTextButton | AAA | [Demo](https://demos.telerik.com/{{ site.platform }}/accessibility/speechtotextbutton) | [Documentation](https://docs.telerik.com/{{ site.platform }}/html-helpers/navigation/speechtotextbutton/accessibility/overview) |

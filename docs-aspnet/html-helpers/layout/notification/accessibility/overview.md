@@ -1,4 +1,4 @@
----
+﻿---
 title: Overview
 page_title: Notification Documentation | Notification Accessibility
 description: "Get started with the {{ site.product }} Notification and learn about its accessibility support for WAI-ARIA, Section 508, and WCAG 2.2."
@@ -25,17 +25,14 @@ This section lists the selectors, attributes, and behavior patterns supported by
 
 | Selector | Attribute | Usage |
 | -------- | --------- | ----- |
-| `.k-notification` | `role=alert` | Notification element should be marked as an alert. |
+| `.k-notification` | `role=status` | Notification element should be marked as a status. Uses `status` instead of `alert` to avoid interrupting screen reader workflow - `role=status` has implicit `aria-live=polite`. |
 |  | `aria-live=polite` | The aria-live value must be set to `polite`, so that it will not obscure other essential information while announced. |
-|  | `aria-label` or `aria-labelledby` | The Notification needs an accessible name to be assigned to it. The label holds info about the type of the Notification (error, warning, info, etc.) |
-|  | `aria-describedby=.k-notification-content id` | USed so that the content of the Notification will be announced by the assistive technologies. |
-| `.k-i-close,.k-svg-i-close` | `aria-hidden=true` | The close button of the notification (if any) should not be present in the accessibility tree. |
+|  | `aria-describedby=.k-notification-content id` | Used so that the content of the Notification will be announced by the assistive technologies. |
+| `.k-svg-i-x,.k-i-x` | `aria-hidden=true` | The close button icon of the notification (if any) should not be present in the accessibility tree. |
 
 ## Resources
 
-[WAI-ARIA spec: Role Alert](https://www.w3.org/TR/wai-aria-1.2/#alert)
-
-[ARIA Practices: Alert](https://www.w3.org/WAI/ARIA/apg/patterns/alert/)
+[WAI-ARIA spec: Role Status](https://www.w3.org/TR/wai-aria-1.2/#status)
 
 ## Section 508
 

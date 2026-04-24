@@ -421,7 +421,7 @@ export const __meta__ = {
 
                 that._toggleResize(false);
 
-                if (that._closing || that._trigger(CLOSE)) {
+                if (!skipEffects && that._closing || that._trigger(CLOSE)) {
                     that._toggleResize(true);
                     return;
                 }

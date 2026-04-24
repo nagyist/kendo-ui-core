@@ -509,6 +509,13 @@ export const __meta__ = {
 
             if (popup && popup.options.anchor) {
                 that._appendContent(popup.options.anchor);
+
+                if (popup.visible()) {
+                    popup.element.css({ width: "", height: "" });
+                    popup.element.parent().css({ width: "", height: "" });
+                    popup.wrapper.css({ width: "", height: "" });
+                    that._recalculatePopupDimensions();
+                }
             }
         },
 
@@ -525,6 +532,9 @@ export const __meta__ = {
             if (current && current[0] != target[0]) {
                 that.popup.close(true);
                 that.popup.element.kendoStop(true, true);// animation can be too long to hide the element before it is shown again
+                that.popup.element.css({ width: "", height: "" });
+                that.popup.element.parent().css({ width: "", height: "" });
+                that.popup.wrapper.css({ width: "", height: "" });
             }
 
             if (!current || current[0] != target[0]) {
@@ -552,7 +562,6 @@ export const __meta__ = {
                 } else {
                     that.popup.element.on("click" + NS, ".k-tooltip-button", that._closeButtonClick.bind(that));
                 }
-                shouldBindPopup = false;
             }
         },
 

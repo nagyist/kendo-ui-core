@@ -19,7 +19,46 @@ The PromptBox is compliant with the [Web Content Accessibility Guidelines (WCAG)
 
 ## WAI-ARIA
 
-All relevant internal elements of the PromptBox component have the aria attributes and roles with their respective values, required for WCAG 2.2 compliance.
+This section lists the selectors, attributes, and behavior patterns supported by the component and its composite elements, if any.
+
+The PromptBox is an input component designed for AI-assisted interactions. It supports single-line and multi-line text input modes, and integrates with the Speech-to-Text Button component.
+
+### Single-line Input
+
+| Selector | Attribute | Usage |
+| -------- | --------- | ----- |
+| `.k-prompt-box-singleline .k-prompt-box-input` | `nodeName=input` | Ensures the input field has the proper textbox role. |
+|  | `aria-label` or `aria-labelledby` | Provides an accessible label for the input. Use `aria-label` or associate with a visible label via `aria-labelledby`. |
+|  | `placeholder` | Provides a short hint to the user about the expected input. Should not replace proper labeling. |
+
+### Multi-line Input
+
+| Selector | Attribute | Usage |
+| -------- | --------- | ----- |
+| `.k-prompt-box-multiline .k-prompt-box-textarea` | `nodeName=textarea` | Ensures the textarea has the proper textbox role. |
+|  | `aria-label` or `aria-labelledby` | Provides an accessible label for the textarea. Use `aria-label` or associate with a visible label via `aria-labelledby`. |
+|  | `placeholder` | Provides a short hint to the user about the expected input. Should not replace proper labeling. |
+|  | `aria-multiline=true` | Indicates the textarea supports multiple lines of text. |
+
+### Affix Buttons
+
+The PromptBox can have prefix and suffix elements containing buttons and icons.
+
+| Selector | Attribute | Usage |
+| -------- | --------- | ----- |
+| `.k-prompt-box-affix .k-button` | `role=button` or `nodeName=button` | Buttons in affixes must have appropriate role. |
+|  | `aria-label` | Affix buttons must be properly labelled to describe their function. |
+
+### Send/Stop Button
+
+The primary action button for submitting the prompt or stopping generation.
+
+| Selector | Attribute | Usage |
+| -------- | --------- | ----- |
+| `.k-prompt-box-affix .k-button:has(.k-svg-i-arrow-up-outline), .k-prompt-box-affix .k-button:has(.k-svg-i-stop-sm)` | `aria-live=polite` | The send button renders the aria-live attribute to announce the change in status. |
+|  | `aria-label` | The send button is labelled to indicate its current action (e.g., 'Send prompt' or 'Stop generating'). |
+
+[SpeechToTextButton accessibility specification]({% slug jquery_speechtotextbutton_accessibility %})
 
 ## Section 508
 
@@ -40,3 +79,17 @@ The PromptBox has been tested with the following screen readers and browsers com
 | Firefox | NVDA |
 | Chrome | JAWS |
 | Microsoft Edge | JAWS |
+
+### Automated Testing
+
+The PromptBox has been tested with [axe-core](https://github.com/dequelabs/axe-core).
+
+### Test Example
+
+A live test example of the PromptBox component could be found here: https://demos.telerik.com/kendo-ui/accessibility/promptbox
+
+## See Also
+
+* [Keyboard Navigation by the PromptBox]({% slug keyboard_navigation_kendoui_promptbox %})
+* [Accessibility in Kendo UI for jQuery]({% slug overview_accessibility_support_kendoui %})
+* [Keyboard Support in Kendo UI for jQuery]({%slug overview_accessibility_support_kendoui%}#keyboard-navigation)
