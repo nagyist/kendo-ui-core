@@ -22,6 +22,8 @@ The Chat component supports the following templates:
 * [**Header Items**](#header-items)&mdash;Define custom content for the chat header area.
 * [**Suggestion Templates**](#suggestion-templates)&mdash;Modify suggested actions and message suggestions layout.
 * [**Timestamp Template**](#timestamp-template)&mdash;Control how date and time separators are displayed.
+* [**Message Content Templates**](#message-content-templates)&mdash;Customize the content area of messages without affecting the surrounding structure.
+* [**Message Status Template**](#message-status-template)&mdash;Customize message delivery status indicators (sent, delivered, seen, failed).
 
 ## Message Templates
 
@@ -164,6 +166,116 @@ The following example demonstrates how to use the `MessageReferenceTemplateHandl
 <script>
     function getMessageReferenceLayout(data) {
         return `<div class='custom-reference' ref-chat-message-reference-pin-wrapper><span class='custom-reference-text'><strong>Message reference:</strong>${data.text}</span></div>`;
+    }
+</script>
+```
+
+## Message Content Templates
+
+Message content templates customize only the text/content portion of messages inside the bubble, without affecting the surrounding message group structure (avatar, username, timestamp). This provides a lighter-weight customization compared to the full `MessageTemplate`.
+
+### MessageContentTemplate
+
+The `MessageContentTemplate()` option controls the rendering of the content area for all messages—both author and receiver. It receives the current message object as a parameter:
+
+```HtmlHelper
+@(Html.Kendo().Chat()
+    .Name("chat")
+    .MessageContentTemplateHandler("getMessageContentLayout")
+)
+```
+{% if site.core %}
+```TagHelper
+@addTagHelper *, Kendo.Mvc
+
+<kendo-chat name="chat" message-content-template-handler="getMessageContentLayout">
+</kendo-chat>
+```
+{% endif %}
+```JavaScript Scripts
+<script>
+    function getMessageContentLayout(message) {
+        return '<div style="border-left:3px solid #1a73e8;padding-left:8px;">' +
+               kendo.htmlEncode(message.text) +
+               '</div>';
+    }
+</script>
+```
+
+### Per-User Content Templates
+
+You can set different content templates for author (sender) and receiver messages through the `AuthorMessageSettings` and `ReceiverMessageSettings` configuration options. These per-user templates override the global `MessageContentTemplate` when set.
+
+```HtmlHelper
+@(Html.Kendo().Chat()
+    .Name("chat")
+    .AuthorMessageSettings(settings =>
+    {
+        settings.MessageContentTemplateHandler("getAuthorMessageLayout");
+    })
+    .ReceiverMessageSettings(settings =>
+    {
+        settings.MessageContentTemplateHandler("getReceiverMessageLayout");
+    })
+)
+```
+{% if site.core %}
+```TagHelper
+@addTagHelper *, Kendo.Mvc
+
+<kendo-chat name="chat">
+    <author-message-settings message-content-template-handler="getAuthorMessageLayout" />
+    <receiver-message-settings message-content-template-handler="getReceiverMessageLayout" />
+</kendo-chat>
+```
+{% endif %}
+```JavaScript Scripts
+<script>
+    function getAuthorMessageLayout(message) {
+        return '<div style="background:#e3f2fd;padding:8px;border-radius:12px;">' +
+               kendo.htmlEncode(message.text) +
+               '</div>';
+    }
+    
+    function getReceiverMessageLayout(message) {
+        return '<div style="background:#f3e5f5;padding:8px;border-radius:12px;border-left:3px solid #9c27b0;">' +
+               kendo.htmlEncode(message.text) +
+               '</div>';
+    }
+</script>
+```
+
+## Message Status Template
+
+The `MessageStatusTemplate()` method customizes how message delivery status indicators are rendered. It receives a context object with the `status` string and the `message` object. When set, this overrides the default status rendering. This is particularly useful for displaying message delivery states such as sent, delivered, seen, or failed.
+
+```HtmlHelper
+@(Html.Kendo().Chat()
+    .Name("chat")
+    .MessageStatusTemplateHandler("getMessageStatusLayout")
+)
+```
+{% if site.core %}
+```TagHelper
+@addTagHelper *, Kendo.Mvc
+
+<kendo-chat name="chat" message-status-template-handler="getMessageStatusLayout">
+</kendo-chat>
+```
+{% endif %}
+```JavaScript Scripts
+<script>
+    function getMessageStatusLayout(ctx) {
+        var colors = { 
+            sent: "#999", 
+            delivered: "#4CAF50", 
+            seen: "#2196F3", 
+            failed: "#f44336" 
+        };
+        var color = colors[ctx.status] || "#999";
+        return '<span style="color:' + color + ';font-size:11px;font-weight:bold;">' +
+               '[' + ctx.status.toUpperCase() + ']' +
+               '</span>';
     }
 </script>
 ```

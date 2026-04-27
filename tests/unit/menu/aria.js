@@ -117,6 +117,71 @@ describe("ARIA support", function() {
         }, 150);
     });
 
+    asyncTest("leaf items should not receive aria-expanded when nested leaf item is clicked", function(done) {
+        menu = $("<ul>" +
+            "<li id='products'>Products" +
+            "<ul>" +
+            "<li id='furniture'>Furniture" +
+            "<ul>" +
+            "<li id='sofas'>Sofas</li>" +
+            "</ul>" +
+            "</li>" +
+            "</ul>" +
+            "</li>" +
+            "<li id='events'>Events</li>" +
+            "</ul>")
+            .appendTo(Mocha.fixture)
+            .kendoMenu({
+                animation: false
+            });
+
+        menu.data("kendoMenu").open($("#products"));
+
+        setTimeout(function() {
+            menu.data("kendoMenu").open($("#furniture"));
+
+            setTimeout(function() {
+                assert.equal($("#products").attr("aria-expanded"), "true");
+                assert.equal($("#furniture").attr("aria-expanded"), "true");
+                assert.isUndefined($("#sofas").attr("aria-expanded"));
+
+                $("#sofas").children(".k-link").trigger("click");
+
+                setTimeout(function() {
+                    done(() => {
+                        assert.isUndefined($("#sofas").attr("aria-expanded"));
+                    });
+                }, 150);
+            }, 150);
+        }, 150);
+    });
+
+    asyncTest("root leaf items should not receive aria-expanded when sibling closes", function(done) {
+        menu = $("<ul>" +
+            "<li id='products'>Products" +
+            "<ul>" +
+            "<li id='furniture'>Furniture</li>" +
+            "</ul>" +
+            "</li>" +
+            "<li id='events'>Events</li>" +
+            "</ul>")
+            .appendTo(Mocha.fixture)
+            .kendoMenu({
+                openOnClick: true,
+                animation: false
+            });
+
+        $("#products").trigger("click");
+        $("#events").trigger("click");
+
+        setTimeout(function() {
+            done(() => {
+                assert.equal($("#products").attr("aria-expanded"), "false");
+                assert.isUndefined($("#events").attr("aria-expanded"));
+            });
+        }, 150);
+    });
+
     it("menu role is added to the group container", function() {
         setup({ dataSource: [{ text: "foo", items: [{ text: "bar" }] }] });
 

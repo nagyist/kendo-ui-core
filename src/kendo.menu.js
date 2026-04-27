@@ -1461,7 +1461,9 @@ export const __meta__ = {
             items.each(function() {
                 var li = $(this);
 
-                li.attr(ARIA_EXPANDED, false);
+                if (li.attr("aria-haspopup")) {
+                    li.attr(ARIA_EXPANDED, false);
+                }
 
                 if (!dontClearClose && that._isRootItem(li)) {
                     that.clicked = false;
