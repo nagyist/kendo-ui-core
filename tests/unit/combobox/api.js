@@ -1280,6 +1280,67 @@ import { stub } from '../../helpers/unit/stub.js';
 
             assert.equal(combobox.noData, null);
         });
+
+        it("setOptions updates popup container height when height decreases", function() {
+            let combobox = new ComboBox(input, {
+                dataSource: Array.from({ length: 20 }, (_, idx) => `item ${idx + 1}`),
+                height: 200
+            });
+
+            combobox.open();
+
+            let initialPopupHeight = parseFloat(combobox.popup.element.closest(".k-list-container")[0].style.height);
+
+            combobox.close();
+            combobox.setOptions({ height: 100 });
+            combobox.open();
+
+            let updatedPopupHeight = parseFloat(combobox.popup.element.closest(".k-list-container")[0].style.height);
+
+            assert.equal(combobox.options.height, 100);
+            assert.isTrue(updatedPopupHeight < initialPopupHeight);
+            assert.equal(combobox.list.height(), 100);
+        });
+
+        it("setOptions updates popup container height when height increases", function() {
+            let combobox = new ComboBox(input, {
+                dataSource: Array.from({ length: 20 }, (_, idx) => `item ${idx + 1}`),
+                height: 200
+            });
+
+            combobox.open();
+
+            let initialPopupHeight = parseFloat(combobox.popup.element.closest(".k-list-container")[0].style.height);
+
+            combobox.close();
+            combobox.setOptions({ height: 400 });
+            combobox.open();
+
+            let updatedPopupHeight = parseFloat(combobox.popup.element.closest(".k-list-container")[0].style.height);
+
+            assert.equal(combobox.options.height, 400);
+            assert.isTrue(updatedPopupHeight > initialPopupHeight);
+            assert.equal(combobox.list.height(), 400);
+        });
+
+        it("setOptions updates popup container height while popup is open", function() {
+            let combobox = new ComboBox(input, {
+                dataSource: Array.from({ length: 20 }, (_, idx) => `item ${idx + 1}`),
+                height: 200
+            });
+
+            combobox.open();
+
+            let initialPopupHeight = parseFloat(combobox.popup.element.closest(".k-list-container")[0].style.height);
+
+            combobox.setOptions({ height: 100 });
+
+            let updatedPopupHeight = parseFloat(combobox.popup.element.closest(".k-list-container")[0].style.height);
+
+            assert.equal(combobox.options.height, 100);
+            assert.isTrue(updatedPopupHeight < initialPopupHeight);
+            assert.equal(combobox.list.height(), 100);
+        });
         asyncTest("reset filters when _clear is clicked", function(done) {
             let combobox = new ComboBox(input, {
                 filter: "startswith",
@@ -1305,4 +1366,3 @@ import { stub } from '../../helpers/unit/stub.js';
             combobox._clear.click();
         });
     });
-

@@ -218,6 +218,10 @@ export const __meta__ = {
             } else if (options.label) {
                 this._label();
             }
+
+            if (options.height !== undefined) {
+                this._resizePopup(true);
+            }
         },
 
         _bindLoader: function() {
@@ -3536,4 +3540,3 @@ export const __meta__ = {
 
 })(window.kendo.jQuery);
 export default kendo;
-
