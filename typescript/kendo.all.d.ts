@@ -3809,149 +3809,148 @@ declare namespace kendo.ui {
         topAffixTemplate?: Function | undefined;
     }
     interface IChatOptions {
-        messageTemplate?: MessageTemplateFunction | null;
-        messageContentTemplate?: MessageContentTemplateFunction | null;
         /** Show username on messages (can be overridden by user-specific settings) */
-        showUsername: boolean;
+        showUsername?: boolean;
         /** Show avatar on messages (can be overridden by user-specific settings) */
-        showAvatar: boolean;
+        showAvatar?: boolean;
         /** Timestamp visibility mode (can be overridden by user-specific settings) */
-        timestampVisibility: TimestampVisibility;
-        suggestionsBehavior: SuggestionsBehavior;
-        authorMessageSettings: IMessageSettings | null;
-        receiverMessageSettings: IMessageSettings | null;
-        attachmentLayout: AttachmentLayoutMode;
-        filesLayoutMode: FilesLayoutMode;
-        statusField: string;
-        failedField: string;
-        attachmentsField: string;
-        attachmentLayoutField: string;
-        messageStatusTemplate: MessageStatusTemplateFunction | null;
-        messageContentTemplate: MessageContentTemplateFunction | null;
-        userStatusTemplate: UserStatusTemplateFunction | null;
-        attachmentTemplate: AttachmentTemplateFunction | null;
-        messageBoxTemplate: MessageBoxTemplateFunction | null;
-        actionButton: IActionButtonSettings;
+        timestampVisibility?: TimestampVisibility;
+        suggestionsBehavior?: SuggestionsBehavior;
+        authorMessageSettings?: IMessageSettings | null;
+        receiverMessageSettings?: IMessageSettings | null;
+        attachmentLayout?: AttachmentLayoutMode;
+        filesLayoutMode?: FilesLayoutMode;
+        statusField?: string;
+        failedField?: string;
+        attachmentsField?: string;
+        attachmentLayoutField?: string;
+        messageStatusTemplate?: MessageStatusTemplateFunction | null;
+        messageContentTemplate?: MessageContentTemplateFunction | null;
+        messageTemplate?: MessageTemplateFunction | null;
+        userStatusTemplate?: UserStatusTemplateFunction | null;
+        attachmentTemplate?: AttachmentTemplateFunction | null;
+        messageBoxTemplate?: MessageBoxTemplateFunction | null;
+        actionButton?: IActionButtonSettings;
         /** Allow messages to be collapsed */
-        allowMessageCollapse: boolean;
+        allowMessageCollapse?: boolean;
         /** Current user's author ID */
-        authorId: string | null;
+        authorId?: string | null;
         /** Field name for author ID */
-        authorIdField: string;
+        authorIdField?: string;
         /** Field name for author image alt text */
-        authorImageAltTextField: string;
+        authorImageAltTextField?: string;
         /** Field name for author image URL */
-        authorImageUrlField: string;
+        authorImageUrlField?: string;
         /** Field name for author name */
-        authorNameField: string;
+        authorNameField?: string;
         /** Automatically assign unique IDs to messages */
-        autoAssignId: boolean;
+        autoAssignId?: boolean;
         /** Automatically bind to the data source */
-        autoBind: boolean;
-        contextMenuAction: (args: IContextMenuActionEventArgs) => void;
+        autoBind?: boolean;
+        contextMenuAction?: (args: IContextMenuActionEventArgs) => void;
         /** Data source configuration */
         dataSource?: any;
         /** Text direction */
-        dir: ChatDirection;
-        download: (args: IDownloadEventArgs) => void;
-        executeAction: (args: IExecuteActionEventArgs) => void;
+        dir?: ChatDirection;
+        download?: (args: IDownloadEventArgs) => void;
+        executeAction?: (args: IExecuteActionEventArgs) => void;
         /** Actions available in the file context menu */
-        fileActions: IMenuAction[];
-        fileMenuAction: (args: IFileMenuActionEventArgs) => void;
-        fileSelect: (args: IFileSelectEventArgs) => void;
-        fileRemove: (args: IFileRemoveEventArgs) => void;
+        fileActions?: IMenuAction[];
+        fileMenuAction?: (args: IFileMenuActionEventArgs) => void;
+        fileSelect?: (args: IFileSelectEventArgs) => void;
+        fileRemove?: (args: IFileRemoveEventArgs) => void;
         /** Enable file attachment button functionality */
-        fileAttachment: boolean | IFileSelectButtonSettings | null;
+        fileAttachment?: boolean | IFileSelectButtonSettings | null;
         /** Field name for files array */
-        filesField: string;
+        filesField?: string;
         /** Template for rendering file attachments */
-        filesTemplate: FilesTemplateFunction | null;
+        filesTemplate?: FilesTemplateFunction | null;
         /** Header items for the chat Toolbar */
-        headerItems: IHeaderItem[];
+        headerItems?: IHeaderItem[];
         /** Custom header template (overrides headerItems) */
-        headerTemplate: HeaderTemplateFunction | null;
+        headerTemplate?: HeaderTemplateFunction | null;
         /** Widget height */
-        height: string | number | null;
+        height?: string | number | null;
         /** Field name for message ID */
-        idField: string;
+        idField?: string;
         /** Input event handler. The event is triggered on each input change in the message box. */
-        input: (args: IInputEventArgs) => void;
+        input?: (args: IInputEventArgs) => void;
         /** Field name for deleted flag */
-        isDeletedField: string;
+        isDeletedField?: string;
         /** Field name for pinned flag */
-        isPinnedField: string;
+        isPinnedField?: string;
         /** Field name for typing flag */
-        isTypingField: string;
+        isTypingField?: string;
         /** Loading state - transforms send button to stop button */
-        loading: boolean;
+        loading?: boolean;
         /** Actions available in the message context menu */
-        messageActions: IMenuAction[];
+        messageActions?: IMenuAction[];
         /** Message box settings for PromptBox configuration */
-        messageBox: IMessageBoxSettings | null;
+        messageBox?: IMessageBoxSettings | null;
         /** Template for rendering message groups */
-        messageGroupTemplate: MessageGroupTemplateFunction | null;
+        messageGroupTemplate?: MessageGroupTemplateFunction | null;
         /** Template for rendering message references (reply/pin) */
-        messageReferenceTemplate: MessageReferenceTemplateFunction | null;
+        messageReferenceTemplate?: MessageReferenceTemplateFunction | null;
         /** Custom settings for message status display with icon support */
-        messageStatusSettings: Partial<Record<MessageStatus, IMessageStatusSettings>> | null;
+        messageStatusSettings?: Partial<Record<MessageStatus, IMessageStatusSettings>> | null;
         /** Template for rendering individual messages */
-        messageTemplate: MessageTemplateFunction | null;
+        messageTemplate?: MessageTemplateFunction | null;
         /** Format string for message timestamps */
-        messageTimeFormat: string;
+        messageTimeFormat?: string;
         /** Actions available in the message toolbar */
-        messageToolbarActions: IToolbarAction[];
+        messageToolbarActions?: IToolbarAction[];
         /** Message width display mode */
-        messageWidthMode: MessageWidthMode;
+        messageWidthMode?: MessageWidthMode;
         /** Localization messages */
-        messages: IChatMessages;
+        messages?: IChatMessages;
         /** Template for no data/empty state */
-        noDataTemplate: (() => string) | null;
+        noDataTemplate?: (() => string) | null;
         /** Field name for reply-to ID */
-        replyToIdField: string;
-        resendMessage: (args: IResendMessageEventArgs) => void;
+        replyToIdField?: string;
+        resendMessage?: (args: IResendMessageEventArgs) => void;
         /** Offset reserved above an incoming auto-scrolled message. Accepts pixels or percentage of the visible area. */
-        autoScrollThreshold: number | string;
+        autoScrollThreshold?: number | string;
         /** Show scroll-to-bottom button when scrolled up */
-        scrollToBottomButton: boolean;
+        scrollToBottomButton?: boolean;
         /** Send message event handler. The even is triggered right before the message is sent. */
-        sendMessage: (args: ISendMessageEventArgs) => void;
+        sendMessage?: (args: ISendMessageEventArgs) => void;
         /** Skip HTML sanitization (use with caution) */
-        skipSanitization: boolean;
+        skipSanitization?: boolean;
         /** Speech-to-text configuration. Use false to not render, true for default, or object for custom configuration. */
-        speechToText: boolean | object | null;
-        suggestionClick: (args: ISuggestionClickEventArgs) => void;
+        speechToText?: boolean | object | null;
+        suggestionClick?: (args: ISuggestionClickEventArgs) => void;
         /** Layout mode for suggested actions */
-        suggestedActionsLayoutMode: SuggestedActionsLayoutMode;
+        suggestedActionsLayoutMode?: SuggestedActionsLayoutMode;
         /**
          * @deprecated Use `suggestedActionsLayoutMode` instead. Will be removed in future version.
          * Enable scrollable suggested actions
          */
-        suggestedActionsScrollable: boolean;
+        suggestedActionsScrollable?: boolean;
         /** Template for rendering suggested actions */
-        suggestedActionsTemplate: SuggestionsTemplateFunction | null;
+        suggestedActionsTemplate?: SuggestionsTemplateFunction | null;
         /** Field name for message-level suggested actions */
-        suggestedActionsField: string;
+        suggestedActionsField?: string;
         /** Initial suggestions to display */
-        suggestions: ISuggestion[];
+        suggestions?: ISuggestion[];
         /** Layout mode for message box suggestions: "scroll" | "wrap" | "scrollbuttons" */
-        suggestionsLayoutMode: SuggestedActionsLayoutMode | null;
+        suggestionsLayoutMode?: SuggestedActionsLayoutMode | null;
         /**
          * @deprecated Use `suggestionsLayoutMode` instead. Will be removed in future version.
          * Enable scrollable suggestions
          */
-        suggestionsScrollable: boolean;
+        suggestionsScrollable?: boolean;
         /** Template for rendering suggestions */
-        suggestionsTemplate: SuggestionsTemplateFunction | null;
+        suggestionsTemplate?: SuggestionsTemplateFunction | null;
         /** Field name for message text */
-        textField: string;
+        textField?: string;
         /** Field name for timestamp */
-        timestampField: string;
+        timestampField?: string;
         /** Custom timestamp template */
-        timestampTemplate: TimestampTemplateFunction | null;
-        toolbarAction: (args: IToolbarActionEventArgs) => void;
-        unpin: (args: IUnpinEventArgs) => void;
+        timestampTemplate?: TimestampTemplateFunction | null;
+        toolbarAction?: (args: IToolbarActionEventArgs) => void;
+        unpin?: (args: IUnpinEventArgs) => void;
         /** Widget width */
-        width: string | number | null;
+        width?: string | number | null;
     }
 
     class CheckBox extends kendo.ui.Widget {
@@ -6267,6 +6266,7 @@ declare namespace kendo.ui {
     interface FileManagerCommandArgs {
         command: string;
         args?: any;
+        options?: any;
     }
 
     interface FileManagerBreadcrumb {

@@ -184,7 +184,6 @@ excluded-files:
 - "**/docs-aspnet/troubleshoot/troubleshooting-scaffolding.md"
 - "**/vs-integration/create-kendo-professional-project.md"
 - "**/vs-integration/upgrade-api-analyzer.md"
-- "**/vs-integration/upgrade-wizard.md"
 - "**/installation/nuget-keys.md"
 - "**/installation/adding-client-side-resources/scripts/*"
 - "**/asp-net-mvc-3.md"
