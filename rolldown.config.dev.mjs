@@ -16,7 +16,7 @@ const messages = glob.sync('./src/messages/*.js');
 const replaceVersion = {
     name: 'replace-version',
     transform: {
-        filter: /kendo\.licensing\.js$/,
+        filter: /licensing/,
         handler(code) {
             return code.replace(/\$KENDO_VERSION/gm, version);
         }

@@ -7805,6 +7805,8 @@ declare namespace kendo.ui {
     interface GridGroupable {
         enabled?: boolean | undefined;
         showFooter?: boolean | undefined;
+        stickyHeaders?: boolean | undefined;
+        stickyFooters?: boolean | undefined;
         messages?: GridGroupableMessages | undefined;
         compare?: Function | undefined;
         dir?: string | undefined;

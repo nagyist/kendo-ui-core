@@ -190,6 +190,10 @@ export const __meta__ = {
             }
 
             kendo.notify(this);
+
+            if (this._showWatermarkOverlay) {
+                this._showWatermarkOverlay(this.wrapper[0]);
+            }
         },
 
         events: [

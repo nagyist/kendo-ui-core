@@ -55,7 +55,7 @@ function genNamespace(file) {
 const replaceVersion = {
     name: 'replace-version',
     transform: {
-        filter: /kendo\.licensing\.js$/,
+        filter: /licensing/,
         handler(code) {
             return code.replace(/\$KENDO_VERSION/gm, version);
         }

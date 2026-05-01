@@ -27,7 +27,7 @@ import { kendoJQueryService } from "../services/kendo-jquery.service";
 import { domUtilsService } from "../services/dom-utils.service";
 import { utilsService } from "../services/utils.service";
 import { cssPropertiesService } from "../services/css-properties.service";
-import * as licensing from "../../kendo.licensing.js";
+import { addWatermarkOverlayAndBanner } from "../../licensing";
 // CSS property names that can be applied to widgets
 const cssPropertiesNames = ["themeColor", "fillMode", "shape", "size", "rounded", "positionMode"];
 // ARIA constants
@@ -93,9 +93,7 @@ export class Widget extends Observable {
         var _a, _b;
         const that = this;
         // Check licensing
-        if (!licensing.validatePackage()) {
-            that._showWatermarkOverlay = licensing.addWatermarkOverlayAndBanner;
-        }
+        that._showWatermarkOverlay = addWatermarkOverlayAndBanner;
         // Wrap element with KendoJQuery and bind handler
         const kendoJQuery = kendoJQueryService.getConstructor();
         that.element = kendoJQuery(element).handler(that);

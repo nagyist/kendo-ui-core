@@ -1,6 +1,5 @@
 import { defaultBreakpoints, mediaQuery } from './utils/mediaquery.js';
 import { fromESClass } from './utils/convert-class.js';
-import * as licensing from './kendo.licensing.js';
 import {
     cultureService,
     formatterService,
@@ -34,13 +33,14 @@ import {
     Widget,
     DataBoundWidget
 } from './core/index.js';
+import { packageMetadata, setScriptKey } from './licensing/index.js';
 
 const __meta__ = {
     id: "core",
     name: "Core",
     category: "framework",
     description: "The core of the Kendo framework.",
-    depends: ["licensing"],
+    depends: [],
 };
 
 let $ = window.jQuery || window.$ || jQuery;
@@ -51,7 +51,13 @@ const each = $.each;
 const noop = $.noop;
 const slice = [].slice;
 
-kendo.version = licensing.packageMetadata.version;
+if (!window.KendoLicensing) {
+    window.KendoLicensing = {
+        setScriptKey
+    };
+}
+
+kendo.version = packageMetadata.version;
 
 const EN = "en-US";
 

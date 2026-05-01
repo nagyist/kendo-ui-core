@@ -14609,6 +14609,76 @@ How can I keep footer rows visible in Kendo UI Grid when groups are collapsed? c
     });
     </script>
 
+### groupable.stickyHeaders `Boolean` *(default: false)*
+
+When enabled the group header rows will stick to the top of the scrollable content area while scrolling through the group's data rows. Requires the [`scrollable`](/api/javascript/ui/grid/configuration/scrollable) option to be enabled.
+
+
+<div class="meta-api-description">
+How do I make group headers stick to the top of the grid while scrolling? Enable sticky, fixed, or pinned group header rows that remain visible at the top of the scrollable content area as the user scrolls through grouped data, configure persistent group headers that follow the scroll position, keep group header rows visible and anchored while navigating through large grouped datasets, set group headers to float or stay fixed at the top of the viewport during vertical scrolling, control whether group header rows are pinned to the top of the grid's scrollable container to maintain context when scrolling through grouped records.
+</div>
+
+#### Example - enable sticky group headers
+
+    <div id="grid"></div>
+    <script>
+    $("#grid").kendoGrid({
+        columns: [
+            { field: "productName" },
+            { field: "category" }
+        ],
+        dataSource: {
+            data: [
+                { productName: "Tea", category: "Beverages" },
+                { productName: "Coffee", category: "Beverages" },
+                { productName: "Ham", category: "Food" },
+                { productName: "Bread", category: "Food" }
+            ],
+            group: { field: "category" }
+        },
+        height: 200,
+        scrollable: true,
+        groupable: {
+            stickyHeaders: true
+        }
+    });
+    </script>
+
+### groupable.stickyFooters `Boolean` *(default: false)*
+
+When enabled the group footer rows will stick to the bottom of the scrollable content area while scrolling through the group's data rows. Requires the [`scrollable`](/api/javascript/ui/grid/configuration/scrollable) option to be enabled. The columns must have a [`groupFooterTemplate`](/api/javascript/ui/grid/configuration/columns.groupfootertemplate) defined.
+
+
+<div class="meta-api-description">
+How do I make group footers stick to the bottom of the grid while scrolling? Enable sticky, fixed, or pinned group footer rows that remain visible at the bottom of the scrollable content area as the user scrolls through grouped data, configure persistent group footers that follow the scroll position, keep group footer rows visible and anchored while navigating through large grouped datasets, set group footers to float or stay fixed at the bottom of the grid's scrollable container to maintain context when scrolling through grouped records, control whether group footer rows are pinned to the bottom of the viewport during vertical scrolling within grouped data.
+</div>
+
+#### Example - enable sticky group footers
+
+    <div id="grid"></div>
+    <script>
+    $("#grid").kendoGrid({
+      columns: [
+        { field: "productName", groupFooterTemplate: "Count: #=count#" },
+        { field: "category" }
+      ],
+      dataSource: {
+        data: [
+          { productName: "Tea", category: "Beverages" },
+          { productName: "Coffee", category: "Beverages" },
+          { productName: "Ham", category: "Food" },
+          { productName: "Bread", category: "Food" }
+        ],
+        group: { field: "category", aggregates: [{ field: "productName", aggregate: "count" }] }
+      },
+      height: 200,
+      scrollable: true,
+      groupable: {
+        stickyFooters: true
+      }
+    });
+    </script>
+
 ### groupable.sort `Object`
 
 Sets the sort configuration when grouping.
