@@ -142,7 +142,7 @@ The following example demonstrates how to implement the suggested approach.
 
 The following example shows how to implement the desired scenario by using the [`kendo.dataviz.diagram.Image`](https://docs.telerik.com/kendo-ui/api/javascript/dataviz/diagram/image) setting.
 
-```dojo
+```pseudo
 
 <style>
       .container {
@@ -171,7 +171,7 @@ The following example shows how to implement the desired scenario by using the [
     <script id="template" type="text/x-kendo-template">
       <div class="shape">
         <div class='title'>#= title #</div>
-        <img src='https://demos.telerik.com/aspnet-mvc/content/dataviz/diagram/people/antonio.jpg' />
+        <img src='https://demos.telerik.com/kendo-ui/content/dataviz/diagram/people/antonio.jpg' />
         Foo Bar
       </div>
     </script>
