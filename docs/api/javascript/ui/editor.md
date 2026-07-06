@@ -875,6 +875,7 @@ How to configure cross-origin settings for iframe-based editors using kendo UI e
 
 #### Example
 
+```pseudo
     <textarea id="editor"></textarea>
     <script>
     document.domain = document.domain;
@@ -883,6 +884,7 @@ How to configure cross-origin settings for iframe-based editors using kendo UI e
       domain: document.domain
     });
     </script>
+```
 
 ### encoded `Boolean` *(default: true)*
 

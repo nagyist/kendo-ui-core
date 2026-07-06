@@ -35,7 +35,7 @@ To achieve the desired scenario, use either of the available approaches:
 
 The following example demonstrates how to implement the suggested approach.
 
-```dojo
+```pseudo
 
 <style>
       .container {
@@ -64,7 +64,7 @@ The following example demonstrates how to implement the suggested approach.
     <script id="template" type="text/x-kendo-template">
       <div class="shape">
         <div class='title'>#= title #</div>
-        <img height="100px" width="100px" src='https://demos.telerik.com/kendo-ui/content/dataviz/diagram/people/antonio.jpg' />
+        <img height="100px" width="100px" crossorigin="anonymous" src='https://placehold.co/100x100' />
         Foo Bar
       </div>
     </script>
@@ -171,7 +171,7 @@ The following example shows how to implement the desired scenario by using the [
     <script id="template" type="text/x-kendo-template">
       <div class="shape">
         <div class='title'>#= title #</div>
-        <img src='https://demos.telerik.com/kendo-ui/content/dataviz/diagram/people/antonio.jpg' />
+        <img src='https://placehold.co/100x100' />
         Foo Bar
       </div>
     </script>
@@ -191,7 +191,7 @@ The following example shows how to implement the desired scenario by using the [
             var dataItem = options.dataItem;
 
             g.append(new dataviz.diagram.Image({
-                source: "https://demos.telerik.com/kendo-ui/content/dataviz/diagram/people/antonio.jpg",
+                source: "https://placehold.co/100x100",
                 x: 3,
                 y: 3,
                 width: 68,
