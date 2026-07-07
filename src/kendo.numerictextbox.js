@@ -650,6 +650,7 @@ export const __meta__ = {
             var numberFormat = this._format(this.options.format);
             var decimalSeparator = numberFormat[POINT];
             var minInvalid = (min !== null && min >= 0 && value.charAt(0) === "-");
+            var parsedValue;
 
             if (this._numPadDot && decimalSeparator !== POINT) {
                 value = value.replace(POINT, decimalSeparator);
@@ -657,10 +658,12 @@ export const __meta__ = {
                 this._numPadDot = false;
             }
 
-            if (this._isPasted && this._parse(value)) {
-                value = this._parse(value)
-                    .toString()
-                    .replace(POINT, numberFormat[POINT]);
+            if (this._isPasted) {
+                parsedValue = this._parse(value);
+
+                if (parsedValue) {
+                    value = this._normalizePasteValue(parsedValue, numberFormat);
+                }
             }
 
             if (this._numericRegex(numberFormat).test(value) && !minInvalid) {
@@ -675,6 +678,21 @@ export const __meta__ = {
             }
 
             this._isPasted = false;
+        },
+
+        _normalizePasteValue: function(value, numberFormat) {
+            var precision = this.options.decimals;
+            var normalizedValue = value.toString();
+
+            if (precision === NULL) {
+                precision = numberFormat.decimals;
+            }
+
+            if (normalizedValue.indexOf("e") !== -1) {
+                normalizedValue = this._round(value, precision);
+            }
+
+            return normalizedValue.replace(POINT, numberFormat[POINT]);
         },
 
         _blinkInvalidState: function() {
@@ -739,13 +757,13 @@ export const __meta__ = {
 
             that._isPasted = true;
 
-           setTimeout(function() {
+            setTimeout(function() {
                 var result = that._parse(element.value);
 
                 if (result === NULL) {
                     that._update(value);
                 } else {
-                    element.value = result.toString().replace(POINT, numberFormat[POINT]);
+                    element.value = that._normalizePasteValue(result, numberFormat);
                     if (that._adjust(result) !== result || !that._numericRegex(numberFormat).test(element.value)) {
                         value = that._getFactorValue(element.value);
                         that._update(value);
@@ -1005,4 +1023,3 @@ export const __meta__ = {
     ui.plugin(NumericTextBox);
 })(window.kendo.jQuery);
 export default kendo;
-
