@@ -14577,6 +14577,7 @@ declare namespace kendo.ui {
 
     interface TreeListColumnMenu {
         columns?: boolean | undefined;
+        componentType?: string | undefined;
         filterable?: boolean | undefined;
         sortable?: boolean | undefined;
         messages?: TreeListColumnMenuMessages | undefined;

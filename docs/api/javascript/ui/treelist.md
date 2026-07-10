@@ -2171,6 +2171,41 @@ How to enable column selection and visibility toggles in a hierarchical TreeList
       });
     </script>
 
+### columnMenu.componentType `String`*(default: "classic")*
+
+ Specifies the component type of the column menu.
+
+* `"classic"` - Uses the standard rendering of the column menu.
+* `"modern"` - Uses new rendering with a fresh and modern look and feel.
+* `"tabbed"` - Uses the rendering of the `"modern"` menu, but splits its content into different tabs.
+
+<div class="meta-api-description">
+How to customize the column menu in Kendo UI TreeList? Configure and customize the appearance and layout of the treelist's column menu by selecting among classic, modern, or tabbed rendering styles to control how column menu options are displayed and organized; choose a traditional straightforward menu, a sleek updated interface, or a tabbed design that segments menu content for improved navigation and usability, enabling you to set or enable different visual modes, switch between legacy and contemporary layouts, and tailor menu presentation to enhance user experience and fit various UI preferences or application themes.
+</div>
+
+#### Example
+
+    <div id="treeList"></div>
+    <script>
+      $("#treeList").kendoTreeList({
+        columns: [
+          { field: "name" },
+          { field: "age" }
+        ],
+        columnMenu: {
+          componentType: "modern"
+        },
+        sortable: true,
+        dataSource: {
+          data: [
+            { id: 1, parentId: null, name: "Jane Doe", age: 22 },
+            { id: 2, parentId: 1, name: "John Doe", age: 24 },
+            { id: 3, parentId: 1, name: "Jenny Doe", age: 14 }
+          ]
+        }
+      });
+    </script>
+
 ### columnMenu.filterable `Boolean` *(default: true)*
 
 If set to `true`, the column menu will allow the user to filter the TreeList. By default, if filtering is enabled through [`filterable`](/api/javascript/ui/treelist#configuration-filterable), the column menu allows the user to filter.
