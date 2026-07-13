@@ -417,10 +417,12 @@ export const __meta__ = {
                     this._selector._keydown(ev);
                 }
                 preventDefault(ev);
+                ev.stopPropagation();
             }
             else if (key == KEYS.ENTER || key == KEYS.DOWN) {
                 this.open();
                 preventDefault(ev);
+                ev.stopPropagation();
             }
         },
 

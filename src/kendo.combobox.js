@@ -1137,8 +1137,14 @@ export const __meta__ = {
 
             if (key === keys.HOME) {
                 that._firstItem();
+                if (that.popup.visible()) {
+                    e.stopPropagation();
+                }
             } else if (key === keys.END) {
                 that._lastItem();
+                if (that.popup.visible()) {
+                    e.stopPropagation();
+                }
             } else if (key === keys.ENTER || (key === keys.TAB && that.popup.visible())) {
                 var current = that.listView.focus();
                 var dataItem = that.dataItem();
@@ -1184,8 +1190,12 @@ export const __meta__ = {
                         that._oldText = that.text();
                     }
                 }
-            } else if (key != keys.TAB && !that._move(e) && !isNonPrintableKey && !isFkey && !e.ctrlKey) {
-               that._search();
+            } else if (key != keys.TAB) {
+                if (that._move(e)) {
+                    e.stopPropagation();
+                } else if (!isNonPrintableKey && !isFkey && !e.ctrlKey) {
+                    that._search();
+                }
             } else if (that.options.clearOnEscape && key === keys.ESC && !that.popup.visible() && that.text()) {
                 that._clearValue();
             }

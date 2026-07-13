@@ -464,4 +464,18 @@ describe("kendo.ui.NumericTextBox Navigation", function() {
             done(() => assert.equal(input[0].value.substring(input[0].selectionStart, input[0].selectionEnd), "15"));
         }, 100);
     });
+
+    it("handled keydown does not bubble to parent", function() {
+        let parentKeydowns = 0;
+        let numerictextbox = new NumericTextBox(input, { value: 5 });
+
+        Mocha.fixture.on("keydown.bubbletest", function() {
+            parentKeydowns++;
+        });
+
+        input.trigger({ type: "keydown", keyCode: keys.DOWN });
+        Mocha.fixture.off("keydown.bubbletest");
+
+        assert.equal(parentKeydowns, 0);
+    });
 });

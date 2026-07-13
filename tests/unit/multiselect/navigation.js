@@ -1121,4 +1121,22 @@ describe("kendo.ui.MultiSelect tag navigation", function() {
             }
         });
     });
+
+    it("handled keydown does not bubble to parent", function() {
+        let parentKeydowns = 0;
+        let multiselect = new MultiSelect(select, {
+            animation: false
+        });
+
+        multiselect.open();
+
+        Mocha.fixture.on("keydown.bubbletest", function() {
+            parentKeydowns++;
+        });
+
+        multiselect.input.trigger({ type: "keydown", keyCode: keys.DOWN });
+        Mocha.fixture.off("keydown.bubbletest");
+
+        assert.equal(parentKeydowns, 0);
+    });
 });

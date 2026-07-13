@@ -148,10 +148,12 @@ import "../kendo.core.js";
                 if (current) {
                     this._select(current);
                     this.trigger("forceSelect", { value: this.value() });
+                    e.stopPropagation();
                     return;
                 }
             } else if (keyCode == KEYS.ESC) {
                 this._cancel();
+                e.stopPropagation();
             }
 
             if (newCurrent && newCurrent.nodeType !== 1) {
@@ -160,7 +162,7 @@ import "../kendo.core.js";
 
             if (newCurrent) {
                 preventDefault(e);
-
+                e.stopPropagation();
                 this._current(newCurrent);
             }
         },

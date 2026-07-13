@@ -723,4 +723,23 @@ describe("kendo.ui.ComboBox selection", function() {
 
         assert.equal(combobox.value(), "item1");
     });
+
+    it("handled keydown does not bubble to parent", function() {
+        let parentKeydowns = 0;
+        combobox = new ComboBox(input, {
+            animation: false,
+            dataSource: data
+        });
+
+        combobox.open();
+
+        Mocha.fixture.on("keydown.bubbletest", function() {
+            parentKeydowns++;
+        });
+
+        combobox.input.trigger({ type: "keydown", keyCode: keys.DOWN });
+        Mocha.fixture.off("keydown.bubbletest");
+
+        assert.equal(parentKeydowns, 0);
+    });
 });

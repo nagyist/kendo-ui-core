@@ -552,7 +552,9 @@ export const __meta__ = {
             clearTimeout(that._focusing);
             that.wrapper.removeClass(FOCUSED).removeClass(HOVER);
             that._blur();
-            that._removeInvalidState();
+            if (that._invalidStateTimeout) {
+                that._removeInvalidState();
+            }
         },
 
         _format: function(format, culture) {
@@ -624,9 +626,11 @@ export const __meta__ = {
 
             if (key == keys.DOWN) {
                 that._step(-1);
+                e.stopPropagation();
                 return;
             } else if (key == keys.UP) {
                 that._step(1);
+                e.stopPropagation();
                 return;
             } else if (key == keys.ENTER) {
                 that._change(that.element.val());
@@ -640,7 +644,9 @@ export const __meta__ = {
         },
 
         _keyup: function() {
-            this._removeInvalidState();
+            if (this._invalidStateTimeout) {
+                this._removeInvalidState();
+            }
         },
 
         _inputHandler: function() {

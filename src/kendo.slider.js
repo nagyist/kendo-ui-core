@@ -934,6 +934,7 @@ export const __meta__ = {
                 that._setValueInRange(that._keyMap[e.keyCode](that.options.value));
                 that._drag._updateTooltip(that.value());
                 e.preventDefault();
+                e.stopPropagation();
             }
         },
 
@@ -1570,6 +1571,7 @@ export const __meta__ = {
                 activeHandleDrag._updateTooltip(that.value()[that._activeHandle]);
 
                 e.preventDefault();
+                e.stopPropagation();
             }
         },
 

@@ -1,4 +1,5 @@
 import '@progress/kendo-ui/src/kendo.numerictextbox.js';
+import '@progress/kendo-ui/src/kendo.validator.js';
 
 let NumericTextBox = kendo.ui.NumericTextBox,
     input,
@@ -48,5 +49,21 @@ describe("kendo.ui.NumericTextBox validation", function() {
 
         assert.isOk(!textbox.wrapper.hasClass(STATE_INVALID));
         assert.equal(textbox._validationIcon.css("display"), "none");
+    });
+
+    it("k-invalid set by Validator with validateOnBlur false is not removed on focusout", function() {
+        let form = $('<form><input required /></form>').appendTo(Mocha.fixture);
+        let ntbInput = form.find("input");
+        let textbox = ntbInput.kendoNumericTextBox().data("kendoNumericTextBox");
+        let validator = form.kendoValidator({ validateOnBlur: false }).data("kendoValidator");
+
+        validator.validate();
+
+        assert.isOk(textbox.wrapper.hasClass(STATE_INVALID));
+
+        textbox.element.trigger("focusin");
+        textbox.element.focusout();
+
+        assert.isOk(textbox.wrapper.hasClass(STATE_INVALID));
     });
 });

@@ -283,4 +283,18 @@ describe("listbox item focusing", function() {
 
         assert.equal(initialScrollTop, wrapper.scrollTop());
     });
+
+    it("handled keydown does not bubble to parent", function() {
+        let parentKeydowns = 0;
+        listbox.select(listbox.items().first());
+
+        Mocha.fixture.on("keydown.bubbletest", function() {
+            parentKeydowns++;
+        });
+
+        listbox._getList().trigger({ type: "keydown", keyCode: keys.DOWN });
+        Mocha.fixture.off("keydown.bubbletest");
+
+        assert.equal(parentKeydowns, 0);
+    });
 });

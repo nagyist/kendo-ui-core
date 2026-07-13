@@ -495,6 +495,9 @@ export const __meta__ = {
 
             if (shouldPreventDefault) {
                 e.preventDefault();
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                }
             }
         },
 

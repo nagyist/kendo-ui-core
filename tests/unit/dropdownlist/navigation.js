@@ -379,6 +379,23 @@ describe("kendo.ui.DropDownList selection", function() {
         dropdownlist.wrapper.trigger({ type: "keydown", altKey: true, keyCode: kendo.keys.DOWN });
     });
 
+    it("handled keydown on combobox does not bubble to parent", function() {
+        let parentKeydowns = 0;
+        let dropdownlist = new DropDownList(input, {
+            dataSource: data
+        });
+
+        Mocha.fixture.on("keydown.issue6802", function() {
+            parentKeydowns++;
+        });
+
+        dropdownlist.wrapper.trigger({ type: "keydown", altKey: true, keyCode: kendo.keys.DOWN });
+        Mocha.fixture.off("keydown.issue6802");
+
+        assert.isOk(dropdownlist.popup.visible());
+        assert.equal(parentKeydowns, 0);
+    });
+
     it("pressing alt + up should close popup", function() {
         let blurWasCalled, dropdownlist = new DropDownList(input, {
             dataSource: data
@@ -938,6 +955,39 @@ describe("kendo.ui.DropDownList animated selection", function() {
             });
 
             done(() => assert.equal(document.activeElement, dropdownlist.wrapper[0]));
+        });
+    });
+
+    asyncTest("handled keydown on filterInput does not bubble to parent", function(done) {
+        let parentKeydowns = 0;
+        let dropdownlist = input.kendoDropDownList({
+            dataTextField: "text",
+            dataValueField: "value",
+            dataSource: [
+                { text: "item1", value: "item1" },
+                { text: "item2", value: "item2" }
+            ],
+            filter: "startswith"
+        }).data("kendoDropDownList");
+
+        dropdownlist.wrapper.focus();
+        dropdownlist.open();
+
+        dropdownlist.popup.one("activate", function() {
+            Mocha.fixture.on("keydown.issue6802", function() {
+                parentKeydowns++;
+            });
+
+            dropdownlist.filterInput.trigger({
+                type: "keydown",
+                keyCode: kendo.keys.DOWN
+            });
+            Mocha.fixture.off("keydown.issue6802");
+
+            done(() => {
+                assert.equal(dropdownlist.value(), "item2");
+                assert.equal(parentKeydowns, 0);
+            });
         });
     });
 

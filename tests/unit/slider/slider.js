@@ -926,4 +926,19 @@ describe("vertical slider rtl", function() {
         assert.isOk(isDefaultPrevent);
         assert.equal(0, slider.value());
     });
+
+    it("handled keydown does not bubble to parent", function() {
+        let parentKeydowns = 0;
+        let slider = newSlider({ value: 5 });
+        let dragHandle = slider.wrapper.find(".k-draghandle");
+
+        Mocha.fixture.on("keydown.bubbletest", function() {
+            parentKeydowns++;
+        });
+
+        dragHandle.focus().trigger({ type: "keydown", keyCode: kendo.keys.RIGHT });
+        Mocha.fixture.off("keydown.bubbletest");
+
+        assert.equal(parentKeydowns, 0);
+    });
 });

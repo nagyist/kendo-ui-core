@@ -428,8 +428,27 @@ it("AutoComplete prevents default on PAGEDOWN", function() {
         preventDefault: function() {
             assert.isOk(true);
         }
-        });
+    });
 });
 
+it("handled keydown does not bubble to parent", function() {
+    let parentKeydowns = 0;
+    let autocomplete = new AutoComplete(input, {
+        animation: false,
+        dataSource: getData(3)
     });
+
+    autocomplete.search("item");
+
+    Mocha.fixture.on("keydown.bubbletest", function() {
+        parentKeydowns++;
+    });
+
+    autocomplete.element.trigger({ type: "keydown", keyCode: keys.DOWN });
+    Mocha.fixture.off("keydown.bubbletest");
+
+    assert.equal(parentKeydowns, 0);
+});
+
+});
 

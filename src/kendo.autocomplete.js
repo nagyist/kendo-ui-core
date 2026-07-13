@@ -715,6 +715,7 @@ export const __meta__ = {
             var listView = that.listView;
             var visible = that.popup.visible();
             var current = listView.focus();
+            var handled = false;
 
             that._last = key;
 
@@ -738,6 +739,7 @@ export const __meta__ = {
                     });
                 }
                 e.preventDefault();
+                handled = true;
             } else if (key === keys.ESC ) {
                 if (!that._isEnabled()) {
                     return;
@@ -745,25 +747,31 @@ export const __meta__ = {
                 if (visible) {
                     e.preventDefault();
                     that.close();
+                    handled = true;
                 } else {
                     that._clearValue();
                 }
             } else if (e.altKey && key === keys.UP && visible) {
                 e.preventDefault();
                 that.close();
+                handled = true;
             } else if (key === keys.UP) {
                 if (visible) {
                     this._move(current ? "focusPrev" : "focusLast");
                 }
                 e.preventDefault();
+                handled = true;
             } else if (key === keys.HOME) {
                 this._move("focusFirst");
+                handled = visible;
             } else if (key === keys.END) {
                 this._move("focusLast");
+                handled = visible;
             } else if (key === keys.ENTER || key === keys.TAB) {
 
                 if (key === keys.ENTER && visible) {
                     e.preventDefault();
+                    handled = true;
                 }
 
                 if (visible && current) {
@@ -773,6 +781,7 @@ export const __meta__ = {
                     }
 
                     this._select(current);
+                    handled = true;
                 }
 
                 this._blur();
@@ -781,11 +790,16 @@ export const __meta__ = {
 
                 var direction = key === keys.PAGEDOWN ? 1 : -1;
                 listView.scrollWith(direction * listView.screenHeight());
+                handled = true;
             } else {
                 // In some cases when the popup is opened resize is triggered which will cause it to close
                 // Setting the below flag will prevent this from happening
                 that.popup._hovered = true;
                 that._search();
+            }
+
+            if (handled) {
+                e.stopPropagation();
             }
         },
 

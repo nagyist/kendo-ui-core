@@ -810,6 +810,9 @@ export const __meta__ = {
             handled = that._move(e);
 
             if (handled) {
+                if (key !== keys.TAB && (key !== keys.ESC || isPopupVisible)) {
+                    e.stopPropagation();
+                }
                 return;
             }
 
