@@ -37,6 +37,23 @@ describe("Selectable API", function() {
         assert.equal(selected[0], items[0]);
     });
 
+    it("setOptions switches to single selection", function() {
+        listbox = new ListBox(container, {
+            dataSource: [1, 2, 3],
+            selectable: "multiple"
+        });
+
+        listbox.setOptions({selectable: "single"});
+
+        let items = listbox.items();
+        listbox.select(items[0]);
+        listbox.select(items[1]);
+
+        let selected = listbox.select();
+        assert.equal(selected.length, 1);
+        assert.equal(selected[0], items[1]);
+    });
+
     it("select another deselects the first", function() {
         listbox = new ListBox(container, {
             dataSource: [1, 2, 3]
@@ -69,6 +86,22 @@ describe("Selectable API", function() {
             dataSource: [1, 2, 3],
             selectable: "multiple"
         });
+
+        let items = listbox.items();
+        listbox.select(items);
+
+        let selected = listbox.select();
+        assert.equal(selected.length, 3);
+        assert.deepEqual(selected.toArray(), items.toArray());
+    });
+
+    it("setOptions switches to multiple selection", function() {
+        listbox = new ListBox(container, {
+            dataSource: [1, 2, 3],
+            selectable: "single"
+        });
+
+        listbox.setOptions({selectable: "multiple"});
 
         let items = listbox.items();
         listbox.select(items);

@@ -166,9 +166,16 @@ export const __meta__ = {
         },
 
         setOptions: function(options) {
-            Widget.fn.setOptions.call(this, options);
-            this._templates();
-            this._dataSource();
+            let that = this;
+            Widget.fn.setOptions.call(that, options);
+            
+            that._templates();
+            that._dataSource();
+
+            if ("selectable" in options) {
+                that.selectable?.destroy();
+                that._selectable();
+            }
         },
 
         events: [
