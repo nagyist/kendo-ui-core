@@ -2098,7 +2098,7 @@ export const __meta__ = {
 
             this._userTriggered = e.userTriggered || parent?._userTriggered;
             this._cascadeTriggered = false;
-            
+
             if (this.listView.bound()) {
                 this._clearSelection(parent, true);
             }

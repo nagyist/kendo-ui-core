@@ -798,7 +798,7 @@ export const __meta__ = {
                 that._search();
             }
 
-            if (handled) {
+            if (handled && key !== keys.ENTER) {
                 e.stopPropagation();
             }
         },

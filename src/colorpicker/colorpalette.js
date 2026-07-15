@@ -148,7 +148,6 @@ import "../kendo.core.js";
                 if (current) {
                     this._select(current);
                     this.trigger("forceSelect", { value: this.value() });
-                    e.stopPropagation();
                     return;
                 }
             } else if (keyCode == KEYS.ESC) {

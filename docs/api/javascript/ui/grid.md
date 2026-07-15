@@ -28426,7 +28426,7 @@ This allows you to change paper size, orientation and apply transformations on e
             console.log(kendo.format("{0:P} complete", e.progress));
         })
         .done(function() {
-            alert("Export completed!");
+            console.log("Export completed!");
         });
       }
     });

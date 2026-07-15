@@ -417,12 +417,16 @@ export const __meta__ = {
                     this._selector._keydown(ev);
                 }
                 preventDefault(ev);
-                ev.stopPropagation();
+                if (key !== KEYS.ENTER) {
+                    ev.stopPropagation();
+                }
             }
             else if (key == KEYS.ENTER || key == KEYS.DOWN) {
                 this.open();
                 preventDefault(ev);
-                ev.stopPropagation();
+                if (key !== KEYS.ENTER) {
+                    ev.stopPropagation();
+                }
             }
         },
 
@@ -430,12 +434,11 @@ export const __meta__ = {
             const that = this;
 
             let buttons;
-            if(that.options.buttonsTemplate) {
+            if (that.options.buttonsTemplate) {
                 buttons = kendo.template(that.options.buttonsTemplate);
 
                 return buttons;
-            }
-            else {
+            } else {
                 buttons = [
                     {
                         command: "cancel",

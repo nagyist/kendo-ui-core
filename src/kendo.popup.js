@@ -179,7 +179,8 @@ export const __meta__ = {
                     hide: true
                 }
             },
-            omitOriginOffsets: false
+            omitOriginOffsets: false,
+            smartFlip: false
         },
 
         _animationClose: function() {
@@ -561,7 +562,15 @@ export const __meta__ = {
                 }
 
                 if (offset + output < 0) {
-                    output += anchorSize + size;
+                    if (this.options.smartFlip) {
+                        var overflowBelow = offset + boxSize - viewPortSize;
+                        var overflowAbove = -(offset + output);
+                        if (overflowAbove >= overflowBelow) {
+                            output += anchorSize + size;
+                        }
+                    } else {
+                        output += anchorSize + size;
+                    }
                 }
             }
             return output;
