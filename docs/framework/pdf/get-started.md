@@ -9,7 +9,7 @@ position: 1
 
 # Getting Started with PDF Export
 
-This guide demonstrates how to use the Kendo UI for jQuery Drawing Library to export the content of a page to a PDF file.
+This guide demonstrates how to use the Kendo UI for jQuery Drawing Library and `drawDOM` to export page content to a PDF file.
 
 After the completion of this guide, you will achieve the following result:
 
@@ -20,13 +20,15 @@ After the completion of this guide, you will achieve the following result:
       <div id="grid"></div>
     </div>
     <script>
+      var pdfOptions = {
+        margin: "2px",
+        paperSize: "A3",
+        landscape: true,
+        multiPage: true
+      };
+
       $("#export").on("click", () => {
-        kendo.drawing.drawDOM("#container", {
-          margin: "2px", // configure some of the PDF options.
-          paperSize: "A3",
-          landscape: true,
-          multiPage: true
-        }).then(function(group){
+        kendo.drawing.drawDOM("#container", pdfOptions).then(function(group){
           kendo.drawing.pdf.saveAs(group, "filename.pdf");
         });
       });
@@ -125,41 +127,50 @@ After the completion of this guide, you will achieve the following result:
 
 ## 1. Draw the Scene
 
-Use the Drawing API to generate a drawing of the current scene.
+Use the Drawing API to generate a drawing group from the current DOM content.
+
+When you export HTML content with `drawDOM`, the PDF output preserves common document structures such as ordered and unordered lists, including bullet points.
 
 ```javascript
 kendo.drawing.drawDOM("#container");
 ```
 
-## 2. Configure the Options of the PDF
+## 2. Configure the PDF Options
 
-Set some of the options such as margins, landscape mode, and paper size:
+Define the PDF options in a variable and set values such as margins, landscape mode, and paper size:
 
 ```javascript
- kendo.drawing.drawDOM("#container", {
-    margin: "2px", // configure some of the PDF options.
-    paperSize: "A3",
-    landscape: true,
-    multiPage: true
- });
+var pdfOptions = {
+  margin: "2px",
+  paperSize: "A3",
+  landscape: true,
+  multiPage: true
+};
 ```
 
 ## 3. Export the Scene to PDF
 
-Export the generated scene to a PDF file:
+Pass the `pdfOptions` object to `drawDOM`, and then chain the `saveAs` call to export the generated scene to a PDF file:
 
 ```javascript
-.then(function(group){
+var pdfOptions = {
+  margin: "2px",
+  paperSize: "A3",
+  landscape: true,
+  multiPage: true
+};
+
+kendo.drawing.drawDOM("#container", pdfOptions).then(function(group){
     kendo.drawing.pdf.saveAs(group, "filename.pdf");
 });
 ```
 
-## (Optional) 4. Convert to Data URI or Blob
+## (Optional) 4. Convert the PDF to a Data URI or Blob
 
 You can convert the generated PDF to Data URI or a Blob. By doing so you can attach the file to a form that can be submitted later on.
 
 ```javascript
-    kendodrawing.pdf.toBlob(group, function(blob){
+kendo.drawing.pdf.toBlob(group, function(blob){
         // You can now upload it to a server.
         // This form simulates an <input type="file" name="pdfFile" />.
         var form = new FormData();
@@ -178,11 +189,16 @@ You can convert the generated PDF to Data URI or a Blob. By doing so you can att
 
 ## Next Steps
 
+* [PDF Options]({% slug configuration_drawing %})
+* [Customizing the Appearance]({% slug customizingappearance_drawing %})
+* [Multi-Page Content]({% slug multipagecontent_drawing %})
 * [Drawing Library Overview]({% slug overview_kendoui_drawingapi %})
 * [Drawing HTML Elements Overview]({% slug drawingofhtmlelements_drawingapi %})
 * [Saving Files]({% slug overview_savingfiles_kendoui %})
 
-## See Also 
+## See Also
 
+* [drawDOM API Reference](/api/javascript/drawing/methods/drawdom)
+* [PDF Options JavaScript API Reference](/api/javascript/drawing/pdfoptions)
+* [Limitations and Browser Support for Kendo UI Drawing API]({% slug supportedbrowsers_drawingapi %})
 * [Knowledge Base Section](/knowledge-base)
-

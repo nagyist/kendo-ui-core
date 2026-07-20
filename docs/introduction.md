@@ -1,7 +1,7 @@
 ---
 title: Introduction
 page_title: Introduction to Kendo UI by Progress
-description: "Learn more about the Kendo UI for jQuery components by Progress, their distributions, frameworks, tools, and utilities, the available license and support options, and learning resources."
+description: "Learn about Kendo UI for jQuery components, product flavors, licensing, support options, and learning resources."
 previous_url: /index, /intro/supporting/list-of-widgets, /third-party/electron, /third-party/kinvey, /third-party/sharepoint-add-ins, /third-party/aurelia, /third-party/using-kendo-with-data-access
 slug: welcometo_kendoui
 position: 2
@@ -11,19 +11,19 @@ position: 2
 
 Thank you for choosing Progress<sup>®</sup> Kendo UI for jQuery!  
 
-Kendo UI is a comprehensive HTML5 user interface framework for building interactive and high-performance websites and applications. It comes with a library of 120+ UI components, an abundance of data-visualization gadgets, client-side data source, and a built-in MVVM (Model-View-ViewModel) library.
+Kendo UI is a comprehensive HTML5 user interface framework for building interactive and high-performance websites and applications. It comes with a library of 120+ UI components, data-visualization components, a client-side DataSource component, and a built-in MVVM (Model-View-ViewModel) library.
 
-Kendo UI for jQuery provides complete UI customization which include Bootstrap, Material, Fluent, and more Sass-based themes from the [Progress Design System Kit](https://www.telerik.com/design-system/docs/themes/get-started/introduction/), and is distributed as part of several product units that you can choose from depending on your project requirements. The suite contains components for enterprise-grade line-of-business applications and is suitable for creating professional websites that require expert and timely technical support.
+Kendo UI for jQuery provides complete UI customization through Bootstrap, Material, Fluent, and other Sass-based themes from the [Progress Design System Kit](https://www.telerik.com/design-system/docs/themes/get-started/introduction/). It is distributed as part of several product units that you can choose from depending on your project requirements. The suite contains components for enterprise-grade line-of-business applications and is suitable for creating professional websites that require expert and timely technical support.
 
-To read more about the benefits of using Kendo UI for jQuery, visit the [product overview page](http://www.telerik.com/kendo-jquery-ui).
+To read more about the benefits of using Kendo UI for jQuery, visit the [product overview page](https://www.telerik.com/kendo-jquery-ui).
 
 ## Getting Started
 
-If you are newcomer, follow the [First Steps guide on getting started with Kendo UI for jQuery]({% slug getting_started_installation_kendoui %}).
+If you are a newcomer, follow the [First Steps guide on getting started with Kendo UI for jQuery]({% slug getting_started_installation_kendoui %}).
 
 ## List of Components
 
-The following table lists all Kendo UI components (widgets) that are available in the Kendo UI bundle and in the open-source Kendo UI distribution. For more information on all Kendo UI suites, refer to the section on [Kendo UI flavors](#flavors).   
+The following table lists the Kendo UI components (widgets) that are available in the Kendo UI bundle and in the open-source Kendo UI distribution. For more information on all Kendo UI suites, refer to the section on [Kendo UI flavors](#flavors).
 
 <IntroTable>
     <IntroTableColumn>
@@ -78,22 +78,28 @@ The following table lists all Kendo UI components (widgets) that are available i
             <IntroTableAnchor title="DateInput" href="slug:overview_kendoui_dateinput_widget"></IntroTableAnchor>
             <IntroTableAnchor title="DatePicker" href="slug:overview_kendoui_datepicker_widget"></IntroTableAnchor>
             <IntroTableAnchor title="DateRangePicker" href="slug:overview_kendoui_daterangepicker_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="DateTimePicker" href="slug:overview_kendoui_datetimepicker_widget"></IntroTableAnchor>
             <IntroTableAnchor title="DropDownList" href="slug:overview_kendoui_dropdownlist_widget"></IntroTableAnchor>
             <IntroTableAnchor title="DropDownTree" href="slug:overview_kendoui_dropdowntree_widget"></IntroTableAnchor>
             <IntroTableAnchor title="Editor" href="slug:overview_kendoui_editor_widget"></IntroTableAnchor>
             <IntroTableAnchor title="FlatColorPicker" href="slug:overview_kendoui_flatcolorpicker_widget"></IntroTableAnchor>
             <IntroTableAnchor title="ImageEditor" href="slug:overview_kendoui_imageeditor_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="Chip" href="slug:overview_kendoui_chip_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="ChipList" href="slug:overview_kendoui_chiplist_widget"></IntroTableAnchor>
             <IntroTableAnchor title="ListBox" href="slug:overview_kendoui_listbox_widget"></IntroTableAnchor>
             <IntroTableAnchor title="MaskedTextBox" href="slug:overview_kendoui_maskedtextbox_widget"></IntroTableAnchor>
             <IntroTableAnchor title="MultiColumnComboBox" href="slug:overview_kendoui_multicolumncombobox_widget"></IntroTableAnchor>
             <IntroTableAnchor title="MultiSelect" href="slug:overview_kendoui_multiselect_widget"></IntroTableAnchor>
             <IntroTableAnchor title="NumericTextBox" href="slug:overview_kendoui_numerictextbox_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="OTPInput" href="slug:overview_kendoui_otpinput_widget"></IntroTableAnchor>
             <IntroTableAnchor title="RadioButton" href="slug:overview_kendoui_radiobutton_widget"></IntroTableAnchor>
             <IntroTableAnchor title="RadioGroup" href="slug:overview_kendoui_radiogroup_widget"></IntroTableAnchor>
             <IntroTableAnchor title="RangeSlider" href="slug:overview_kendoui_rangeslider_widget"></IntroTableAnchor>
             <IntroTableAnchor title="Rating" href="slug:overview_kendoui_rating_widget"></IntroTableAnchor>
             <IntroTableAnchor title="Signature" href="slug:overview_kendoui_signature_widget"></IntroTableAnchor>
             <IntroTableAnchor title="Slider" href="slug:overview_kendoui_slider_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="SmartPasteButton" href="slug:overview_kendoui_smartpastebutton_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="SpeechToTextButton" href="slug:overview_kendoui_speechtotextbutton_widget"></IntroTableAnchor>
             <IntroTableAnchor title="Switch" href="slug:overview_kendoui_switch_widget"></IntroTableAnchor>
             <IntroTableAnchor title="TextArea" href="slug:overview_kendoui_textarea_widget"></IntroTableAnchor>
             <IntroTableAnchor title="TextBox" href="slug:overview_kendoui_textbox_widget"></IntroTableAnchor>
@@ -107,6 +113,8 @@ The following table lists all Kendo UI components (widgets) that are available i
         <IntroTableSection title="Conversational UI">
             <IntroTableAnchor title="AIPrompt" href="slug:overview_kendoui_aiprompt_component"></IntroTableAnchor>
             <IntroTableAnchor title="Chat" href="slug:overview_kendoui_chat_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="InlineAIPrompt" href="slug:overview_kendoui_inlineaiprompt_component"></IntroTableAnchor>
+            <IntroTableAnchor title="PromptBox" href="slug:overview_kendoui_promptbox"></IntroTableAnchor>
         </IntroTableSection>
         <IntroTableSection title="PDF">
             <IntroTableAnchor title="PDFViewer" href="slug:overview_kendoui_pdfviewer_widget"></IntroTableAnchor>
@@ -128,6 +136,7 @@ The following table lists all Kendo UI components (widgets) that are available i
             <IntroTableAnchor title="FloatingActionButton" href="slug:overview_kendoui_floatingactionbutton_widget"></IntroTableAnchor>
             <IntroTableAnchor title="Menu" href="slug:overview_kendoui_menu_widget"></IntroTableAnchor>
             <IntroTableAnchor title="PanelBar" href="slug:overview_kendoui_panelbar_widget"></IntroTableAnchor>
+            <IntroTableAnchor title="SegmentedControl" href="slug:overview_kendoui_segmentedcontrol_widget"></IntroTableAnchor>
             <IntroTableAnchor title="SplitButton" href="slug:overview_kendoui_splitbutton_widget"></IntroTableAnchor>
             <IntroTableAnchor title="ToggleButton" href="slug:overview_kendoui_togglebutton"></IntroTableAnchor>
             <IntroTableAnchor title="Stepper" href="slug:overview_stepper_widget"></IntroTableAnchor>
@@ -184,7 +193,7 @@ The following table lists the Kendo UI tools and framework utilities that are av
 | [PDF Export Overview]({% slug pdfderawingexport_drawingapi %}) & [Demos](https://demos.telerik.com/kendo-ui/pdf-export/index)      | <span class="tag-neutral">No</span> | <span class="tag-success">Yes</span> |
 | [Templates Overview]({% slug overview_kendoui_templatescomponent %}) & [Demos](https://demos.telerik.com/kendo-ui/templates/index)        | <span class="tag-success">Yes</span> | <span class="tag-success">Yes</span> |
 | [Theme Builder Demos](https://demos.telerik.com/kendo-ui/themebuilder)        | <span class="tag-success">Yes</span> | <span class="tag-success">Yes</span> |
-|**Official Support**          |<span class="tag-neutral">No</span>  | <span class="tag-success">Yes</span>
+| **Official Support** | <span class="tag-neutral">No</span> | <span class="tag-success">Yes</span> |
 
 ## Flavors
 
@@ -242,9 +251,9 @@ The Kendo UI for jQuery components are integrated with jQuery/JavaScript, provid
 
 ### Open-Source Kendo UI Distribution
 
-The open-source Kendo UI flavor (Kendo UI Core) is the free Kendo UI for jQuery distribution released under Apache v2.0 License. It provides access to a limited number of components and framework features, and to 1,000+ tests running across browsers for each commit to the [GitHub repository](https://github.com/telerik/kendo-ui-core). Kendo UI Core is suitable for open-source or commercial projects that do not require complex UI, such as the Grid, Chart, and other, nor dedicated technical support. 
+The open-source Kendo UI flavor (Kendo UI Core) is the free Kendo UI for jQuery distribution released under the Apache License 2.0. It provides access to a limited number of components and framework features, and to 1,000+ tests running across browsers for each commit to the [GitHub repository](https://github.com/telerik/kendo-ui-core). Kendo UI Core is suitable for open-source or commercial projects that do not require complex UI components, such as the Grid and Charts, or dedicated technical support.
 
-> The open-source Kendo UI distribution does not offer official technical support for the components and framework components it delivers.  
+>note The open-source Kendo UI distribution does not offer official technical support for the components and framework features it delivers.
 
 ### Incorporation in Other Progress Software Products
 
@@ -254,17 +263,17 @@ Kendo UI is also incorporated into products such as [Sitefinity](https://www.pro
 
 Progress provides up-to-date information about the live services it delivers to its customers on a daily basis&mdash;for example, the Kendo UI CDN services, Kendo UI Dojo playground, and Telerik NuGet feed.
 
-* [Progress<sup>®</sup> Telerik<sup>®</sup> Live Services Status Page](http://status.telerik.com/)
+* [Progress<sup>®</sup> Telerik<sup>®</sup> Live Services Status Page](https://status.telerik.com/)
 
 ## Licensing
 
-Kendo UI for jQuery is a commercial UI library. To use it in your applications, you need to obtain the appropriate license. For detailed information about the available license options, pricing, and how to purchase, visit the [licensing page](https://www.telerik.com/purchase/kendo-ui). Feel free to review the Kendo UI for jQuery [License Agreement](https://www.telerik.com/purchase/license-agreement/kendo-ui) to get acquainted with the full terms of use.
+Kendo UI for jQuery is a commercial UI library. To use it in your applications, you need to obtain the appropriate license. For detailed information about the available license options, activation methods, and pricing, see the [Licensing Overview]({% slug licensing-overview %}) and the [licensing page](https://www.telerik.com/purchase/kendo-ui). You can also review the Kendo UI for jQuery [License Agreement](https://www.telerik.com/purchase/license-agreement/kendo-ui) to get acquainted with the full terms of use.
 
 ## Support Options
 
 For any issues you might encounter while working with Kendo UI for jQuery, use any of the available support channels:
 
-* All developers with an active license—whether on a trial or paid plan—benefit from direct support provided by the library's developers. To submit a support ticket, use the [Kendo UI for jQuery dedicated support](https://www.telerik.com/account/support-tickets/) system.
+* All developers with an active license - whether on a trial or paid plan - benefit from direct support provided by the library's developers. To submit a support ticket, use the [Kendo UI for jQuery dedicated support](https://www.telerik.com/account/support-tickets/) system.
 * [Kendo UI for jQuery forums](https://www.telerik.com/forums/kendo-ui) are part of the free support you can get from the community and from the Kendo UI for jQuery team on all kinds of general issues.
 * [Kendo UI for jQuery feedback portal](https://feedback.telerik.com/kendo-jquery-ui) and [Kendo UI for jQuery roadmap](https://www.telerik.com/support/whats-new/kendo-ui/roadmap) provide information on the features in discussion and also the planned ones for release.
 * Kendo UI for jQuery uses [GitHub Issues](https://github.com/telerik/kendo-ui-core/issues/) as its bug tracker and you can submit any related reports there. Also, check out the [closed list](https://github.com/telerik/kendo-ui-core/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed).

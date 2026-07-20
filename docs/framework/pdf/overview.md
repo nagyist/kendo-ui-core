@@ -1,7 +1,7 @@
 ---
 title: Overview
 page_title: PDF Export Overview - Kendo UI PDF Export
-description: "Learn about the Kendo UI PDF Export."
+description: "Learn how Kendo UI PDF Export works, which components support it, and which Drawing library features and options it uses."
 components: ["general"]
 slug: pdfderawingexport_drawingapi
 position: 0
@@ -16,6 +16,7 @@ Under the hood, most of the PDF export options use the [Drawing library]({% slug
 ## Component PDF Export Support
 
 The following Kendo UI widgets support PDF export implementations:
+
 * [Grid (demo)](https://demos.telerik.com/kendo-ui/grid/pdf-export)
 * [TreeList (demo)](https://demos.telerik.com/kendo-ui/treelist/pdf-export)
 * [PivotGrid (demo)](https://demos.telerik.com/kendo-ui/pivotgrid/pdf-export)
@@ -25,10 +26,12 @@ The following Kendo UI widgets support PDF export implementations:
 * [Editor (demo)](https://demos.telerik.com/kendo-ui/editor/pdf-export)
 
 The Charts and Diagram provide PDF export by using their implementation of the `saveAsPDF()` method.
+
 * [Diagram (demo)](https://demos.telerik.com/kendo-ui/diagram/pdf-export)
 * [Chart (demo)](https://demos.telerik.com/kendo-ui/chart-api/pdf-export)
 
 The Gauges and Barcodes can be exported to PDF by using the `exportPDF()` method together with the `kendo.saveAs()` method to save the file.
+
 * [ArcGauge (demo)](https://demos.telerik.com/kendo-ui/arc-gauge/export)
 * [CircularGauge (demo)](https://demos.telerik.com/kendo-ui/circular-gauge/export)
 * [LinearGauge (demo)](https://demos.telerik.com/kendo-ui/linear-gauge/export)
@@ -51,7 +54,7 @@ The Gauges and Barcodes can be exported to PDF by using the `exportPDF()` method
 
 ## Compression
 
-> Starting with v2023.3.1115 the Pako library is no longer distributed with the rest of the Kendo UI for jQuery scripts. You must use one of the official distribution channels such as `unpkg` instead.
+>important Starting with v2023.3.1115 the Pako library is no longer distributed with the rest of the Kendo UI for jQuery scripts. You must use one of the official distribution channels such as `unpkg` instead.
 
 The PDF generator supports compression through the JavaScript [Pako library](https://github.com/nodeca/pako). To automatically enable the compression, load Pako with a `<script>` tag (`window.pako` is available). Compression can make a big difference in the output file size when you are using custom TTF fonts or images with alpha channel, such as PNGs with transparency.
 
@@ -59,13 +62,13 @@ The PDF generator supports compression through the JavaScript [Pako library](htt
 <script src="https://unpkg.com/pako/dist/pako_deflate.min.js"></script>
 ```
 
-> Besides drastically reducing the output size, Pako enables the browser to use less memory while rendering the PDF. Chrome often crashes on generating very large PDF files and including this library will mitigate the problem.
+>note Besides drastically reducing the output size, Pako enables the browser to use less memory while rendering the PDF. Chrome often crashes on generating very large PDF files and including this library will mitigate the problem.
 
 ## Supported Browsers
 
-For more information on the provided browser support, see the [Web Browser Support](({% slug wbe_browserand_operating_system_support %}#support-for-pdf-export)) article. For more information on the Drawing library's API-specific limitations, check the [Limitations and Browser Support for Kendo UI Drawing API]({% slug supportedbrowsers_drawingapi %})
+For more information on the provided browser support, see the [Web Browser Support]({% slug wbe_browserand_operating_system_support %}#support-for-pdf-export) article. For more information on the Drawing library's API-specific limitations, check the [Limitations and Browser Support for Kendo UI Drawing API]({% slug supportedbrowsers_drawingapi %}).
 
-## Next Steps 
+## Next Steps
 
 * [Getting Started with the PDF Export]({% slug getting_started_kendoui_pdf_export %})
 * [PDF Options JavaScript API Reference](/api/javascript/drawing/pdfoptions)

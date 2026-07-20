@@ -9,11 +9,11 @@ position: 3
 
 # Inline Editing
 
-The Grid provides options for editing its data inline when the user clicks a row.
+The Grid provides options for editing its data inline.
 
-To enable inline editing operations, set the `editable` option of the Grid to `inline`. For a runnable example, refer to the [demo on setting the inline edit mode of the Grid](https://demos.telerik.com/kendo-ui/grid/editing-inline).
+To enable inline editing operations, set the `editable` option of the Grid to `inline`. For full CRUD support in this mode, add a toolbar with a **Create** action and a command column for the **Edit** and **Delete** operations. For a runnable example, refer to the [demo on setting the inline edit mode of the Grid](https://demos.telerik.com/kendo-ui/grid/editing-inline).
 
-## KB Articles on Editing
+## KB Articles on Inline Editing
 
 * [Using Detail Template Editors in the Inline Editing Mode]({% slug howto_edit_records_via_detail_template_editor_in_inline_mode %})
 * [Find Out More in the Knowledge Base](/knowledge-base)

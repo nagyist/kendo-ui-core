@@ -16,7 +16,8 @@ The ImageEditor provides a predefined collection of tools that are used to inter
 The ImageEditor creates a set of default tools for image editing. For a runnable example, refer to the [demo of the ImageEditor](https://demos.telerik.com/kendo-ui/editor/index).
 
 The following example demonstrates how to instantiate an ImageEditor with predefined set of tools and define a custom button on the ImageEditor Toolbar.
-```
+
+```javascript
     $(document).ready(function(){
         $("#imageEditor").kendoImageEditor({
             toolbar: {
@@ -45,11 +46,34 @@ The following example demonstrates how to instantiate an ImageEditor with predef
     });
 ```
 
+## Setting an Initial Zoom Level
+
+To apply an initial zoom level when an image is loaded, handle the `imageRendered` event and execute the `ZoomImageEditorCommand` with a numeric value.
+
+In the following example, `1` sets the image to its actual size, while values such as `0.8` and `1.25` set the zoom to 80% and 125%.
+
+```javascript
+    <div id="imageEditor"></div>
+    <script>
+      $(document).ready(function() {
+        $("#imageEditor").kendoImageEditor({
+          imageUrl: "https://demos.telerik.com/kendo-ui/content/shared/images/photos/2.jpg",
+          imageRendered: function(e) {
+            e.sender.executeCommand({
+              command: "ZoomImageEditorCommand",
+              options: 1.25
+            });
+          }
+        });
+      });
+    </script>
+```
+
 ## Adding Custom Commands to the Toolbar
 
 The kendo.ui.imageeditor namespace exposes the ImageEditorCommand class that could be extended to implement a custom ImageEditor command. The example below demonstrates how to create a custom command that creates a thumbnail from the loaded image.
 
-```
+```javascript
     <div id="imageEditor"></div>
 
     <script>

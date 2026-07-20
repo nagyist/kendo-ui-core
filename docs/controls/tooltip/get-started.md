@@ -9,7 +9,7 @@ position: 1
 
 # Getting Started with the Tooltip
 
-This guide demonstrates how to get up and running with the Kendo UI for jQuery Tooltip. 
+This guide demonstrates how to get up and running with the Kendo UI for jQuery Tooltip.
 
 After the completion of this guide, you will be able to achieve the following end result:
 
@@ -23,10 +23,10 @@ After the completion of this guide, you will be able to achieve the following en
 <script>
     $("#container").kendoTooltip({
         filter:"li>span",
-      	content:function(e){
-        	return $(e.target).text()
+        content:function(e){
+            return $(e.target).text()
         },
-      	position:"right"
+        position:"right"
     });
 </script>
 ```
@@ -43,10 +43,10 @@ To define the elements that will serve as the target of the Tooltip, create a `<
 </ul>
 ```
 
-## 2. Initialize the Tooltip 
+## 2. Initialize the Tooltip
 
-In this step, you will initialize the Tooltip from the `<ul>` element. You need to set the filter configuration so that the Tooltip will appear only when you hover over the `<li>` elements. 
- 
+In this step, you will initialize the Tooltip from the `<ul>` element. You need to set the filter configuration so that the Tooltip will appear only when you hover over the `<li>` elements.
+
 ```html
 <ul id="container">
       <li><span>First Item</span></li>
@@ -66,7 +66,7 @@ In this step, you will initialize the Tooltip from the `<ul>` element. You need 
 
 Once the basic initialization is completed, you can determine what the content of the Tooltip will be.
 
-For more information about the alternative approach to load the content, refer to the article on [loading Tooltip content with AJAX]({% slug content_kendoui_tooltip %}). 
+For more information about the alternative approach to load the content, refer to the article on [loading Tooltip content with AJAX]({% slug content_kendoui_tooltip %}).
 
 ```html
 <ul id="container">
@@ -78,8 +78,8 @@ For more information about the alternative approach to load the content, refer t
 <script>
     $("#container").kendoTooltip({
         filter:"li>span",
-      	content:function(e){
-        	return $(e.target).text()
+        content:function(e){
+            return $(e.target).text()
         }
     });
 </script>
@@ -99,21 +99,34 @@ You can now set where the Tooltip will be displayed. For example,  if there is e
 <script>
     $("#container").kendoTooltip({
         filter:"li>span",
-      	content:function(e){
-        	return $(e.target).text()
+        content:function(e){
+            return $(e.target).text()
         },
-      	position:"right"
+        position:"right"
     });
 </script>
 ```
 
-## Next Steps 
+## (Optional) 5. Control the Tooltip Timing
 
-* [Referencing Existing Component Instances]({% slug widget_methodsand_events_kendoui_installation %}) 
+To control when the Tooltip appears and disappears, use the `showAfter` and `hideAfter` options and set them to the desired timeout values in milliseconds.
+
+```javascript
+<script>
+    $("#container").kendoTooltip({
+        // ... other options ...
+        showAfter: 1000,
+        hideAfter: 1000
+    });
+</script>
+```
+
+## Next Steps
+
+* [Referencing Existing Component Instances]({% slug widget_methodsand_events_kendoui_installation %})
 * [Demo Page for the Tooltip](https://demos.telerik.com/kendo-ui/tooltip/index)
 
-## See Also 
+## See Also
 
 * [JavaScript API Reference of the Tooltip](/api/javascript/ui/tooltip)
 * [Knowledge Base Section](/knowledge-base)
-

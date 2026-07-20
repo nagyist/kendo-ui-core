@@ -13,10 +13,9 @@ The Kendo UI for jQuery Grid can be enhanced with an AI-powered chat assistant t
 
 By integrating the Kendo UI `Chat` component with the Grid's AI helpers (for example `getAIRequest()` and `handleAIResponse()`), you can create an intuitive conversational interface where users perform [supported Smart Grid operations](slug:ai_toolbar_tool_kendoui_grid#supported-operations) through simple text commands instead of navigating multiple UI controls.
 
-The following example demonstrates how to implement an AI Chat Assistant that enables users to manage Grid data through natural language commands. Click the **AI Grid** button in the Grid toolbar to open the Chat panel and try inserting a prompt to interact with the data.
+The following example demonstrates how to implement an AI Chat Assistant that enables users to manage Grid data through natural language commands. Click the **AI Grid** button in the Grid toolbar to open the Chat panel and enter a prompt to interact with the data.
 
-For a full runnable example demonstrating integration betweeh Kendo UI for jQuery Grid and Chat please refer to the [AI Chat Assitant Demo](https://demos.telerik.com/kendo-ui/grid/ai-chat-integration).
-
+For a full runnable example demonstrating integration between the Kendo UI for jQuery Grid and Chat, refer to the [AI Chat Assistant demo](https://demos.telerik.com/kendo-ui/grid/ai-chat-integration).
 
 ## Implementation Steps
 
@@ -104,7 +103,6 @@ To implement an AI Chat Assistant for your Grid, follow the steps below:
     grid.handleAIResponse(response);
     ```
 
-
 ## Suggested Links
 
 * [Smart Grid AI Toolbar Assistant](slug:ai_toolbar_tool_kendoui_grid)
@@ -112,4 +110,4 @@ To implement an AI Chat Assistant for your Grid, follow the steps below:
 * [Smart Extensions](slug:smart_ext_kendoui_grid)
 * [Chat Overview](slug:overview_kendoui_chat_widget)
 * [Grid Overview](slug:overview_kendoui_grid_widget)
-* [API Reference of the Chat](/api/chat)
+* [JavaScript API Reference of the Chat](/api/javascript/ui/chat)

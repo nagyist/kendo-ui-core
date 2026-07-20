@@ -1,10 +1,10 @@
 ---
-title: Export Detail Grids
-page_title:  Export Detail Grids - Kendo UI for jQuery Data Grid
-description: "Get started with Kendo UI for jQuery enabling you to export to Excel master and detail Grids."
+title: Export Master and Detail Grids to Excel
+page_title: Export Master and Detail Grids to Excel - Kendo UI for jQuery Data Grid
+description: "Learn how to export master and detail Kendo UI for jQuery Grids to Excel, wait for async detail exports with jQuery Deferred objects, and merge their workbooks."
 previous_url: /controls/data-management/grid/how-to/excel/detail-grid-export
 slug: howto_exportto_excel_masterand_detail_grid
-tags: grid, export, detail, grids
+tags: grid, export, excel, detail, master, hierarchy, deferred, promise, async, workbook
 type: how-to
 res_type: kb
 components: ["grid"]
@@ -29,17 +29,40 @@ components: ["grid"]
 
 ## Description
 
-How can I export master and detail Kendo UI Grids to Excel?
+How can I export master and detail Kendo UI Grids to a single Excel file and merge the detail Grid workbooks into the master Grid workbook?
+
+How can I coordinate the asynchronous detail Grid exports before saving the final Excel file?
+
+This KB also answers the following questions:
+
+* How can I merge detail Grid workbooks into the master Grid Excel export?
+* How can I wait for all child Grid exports before saving a single Excel file?
+* How can I use jQuery `$.Deferred()` in a hierarchical Grid Excel export scenario?
 
 ## Solution
 
-The following examples demonstrate how to export detail Grids to Excel and merge their workbooks with the master Grid workbook.
+To export master and detail Grids to a single Excel file, prevent the default master Grid export, track each asynchronous detail Grid export with a jQuery `$.Deferred()` object, wait for all child workbooks, and then merge the child sheets into the master workbook.
+
+Use the following steps:
+
+1. Handle the Grid [`excelExport`](/api/javascript/ui/grid/events/excelexport) event and call `e.preventDefault()` so the master Grid workbook can be updated before it is saved.
+1. Start a detail Grid export for each master row and store a jQuery `$.Deferred()` object for every asynchronous child export.
+1. Wait for all detail Grid promises with `$.when.apply(null, detailExportPromises)` and sort the returned sheets by their master row index.
+1. Insert the exported detail rows into the master workbook and save the merged result.
 
 To get the workbook of the detail Grids, the demos use the [`excelExport`](/api/javascript/ui/grid/events/excelexport) event. This event is prevented to avoid the saving of an Excel file for each detail Grid. For more information on how Excel documents work, refer to the [introductory help topic on Excel](/framework/excel/introduction#create-excel-document).
 
+The implementation uses jQuery `$.Deferred()` objects to track each asynchronous detail Grid export and waits until all child workbooks are available before merging them into the master workbook.
+
+For more information about how jQuery Deferred objects work, refer to the [jQuery Deferred documentation](https://api.jquery.com/jquery.deferred/).
+
 >With JsZip version 3.x the synchronous methods were deprecated, so you must use the async methods to get the dataURL
 
-The following example demonstrates how to export a detail Grid to Excel including its all pages and details.
+### Export All Pages and Detail Rows
+
+Use this approach when the master Grid export must include all available data, not only the rows on the current page. This example reads the related detail data, exports each child workbook asynchronously, and merges the result into the master workbook before saving the file.
+
+The following example demonstrates how to export a detail Grid to Excel including all pages and detail rows.
 
 ```dojo
 <div id="grid"></div>
@@ -157,8 +180,10 @@ The following example demonstrates how to export a detail Grid to Excel includin
   });
 
   function exportChildData(EmployeeID, rowIndex) {
+    // Track the completion of the current detail Grid export.
     var deferred = $.Deferred();
 
+    // Collect all pending detail Grid exports so they can be awaited together.
     detailExportPromises.push(deferred);
 
     var rows = [{
@@ -192,6 +217,7 @@ The following example demonstrates how to export a detail Grid to Excel includin
     });
 
     exporter.workbook().then(function(book, data) {
+      // Mark the current detail Grid export as completed and return its sheet.
       deferred.resolve({
         masterRowIndex: rowIndex,
         sheet: book.sheets[0]
@@ -200,7 +226,7 @@ The following example demonstrates how to export a detail Grid to Excel includin
   }
 
   function detailInit(e) {
-    // Initiallize a new jQuery Deferred https://api.jquery.com/jQuery.Deferred/
+    // Initialize a new jQuery Deferred.
     // var deferred = $.Deferred();
 
     // Get the index of the master row
@@ -243,6 +269,10 @@ The following example demonstrates how to export a detail Grid to Excel includin
   }
 </script>
 ```
+
+### Export the Current Page Only
+
+Use this approach when you only need the currently loaded master rows and their rendered detail Grids in the final Excel file. This version triggers the export from the instantiated child Grids on the page and merges their sheets into the master workbook.
 
 The following example demonstrates how to export a detail Grid to Excel including the current page only.
 
@@ -346,7 +376,7 @@ The following example demonstrates how to export a detail Grid to Excel includin
   });
 
   function detailInit(e) {
-    // Initialize a new jQuery Deferred https://api.jquery.com/jQuery.Deferred/
+    // Initialize a new jQuery Deferred.
     var deferred = $.Deferred();
 
     // Get the index of the master row.
@@ -393,3 +423,6 @@ The following example demonstrates how to export a detail Grid to Excel includin
 ## See Also
 
 * [JavaScript API Reference of the Data Grid](/api/javascript/ui/grid)
+* [Grid excelExport Event API](/api/javascript/ui/grid/events/excelexport)
+* [Excel Export Overview](/framework/excel/introduction)
+* [jQuery Deferred Documentation](https://api.jquery.com/jquery.deferred/)
