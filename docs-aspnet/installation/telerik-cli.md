@@ -136,7 +136,7 @@ The Telerik CLI stores a session token in:
 
 The session token is valid for one month.
 
-## Check Login State
+### Check Login State
 
 To see which Telerik user is logged in the CLI, use the `whoami` command:
 
@@ -146,7 +146,7 @@ telerik whoami
 
 The CLI will output your Telerik user account email.
 
-## Log Out
+### Log Out
 
 To log out from the Telerik CLI, use the `logout` command.
 
@@ -163,6 +163,17 @@ telerik license get-key
 ````
 
 The `license get-key` command downloads your up-to-date Telerik license key and creates a `telerik-license.txt` file in your [operating system user's folder]({% slug installation_license_key_aspnetcore %}#manual-installation).
+
+## Get Information on the Active License
+
+To get information on the active license on your machine use the `license info` command:
+
+````SH
+telerik license info
+
+# To get detailed information on licensed products use the --json flag
+telerik license info --json
+````
 
 ## Set Up NuGet Feed
 
@@ -214,17 +225,63 @@ You can also fine-tune the process with the following options:
 >caption Configure MCP server for ASP.NET Core
 
 ````SH
-# Configure the MCP server for HTML Helpers
-telerik mcp config aspnetcore-html --ide visualstudio
+# Configure the MCP server
+telerik mcp config aspnetcore --ide visualstudio
 
-# or for TagHelpers
-telerik mcp config aspnetcore-tag --ide visualstudio
 ````
 {% else %}
 >caption Configure MCP server for ASP.NET MVC
 
 ````SH
 telerik mcp config aspnetmvc --ide visualstudio
+````
+{% endif %}
+
+{% if site.core %}
+## Update to the Latest Telerik {{ site.framework }} Version
+
+The `migrate` command provides CLI tools to simplify updating Telerik UI for ASP.NET Core by scanning for and automatically fixing breaking changes between versions. Its purpose is to detect and remediate breaking changes, if any, in Telerik UI for ASP.NET Core projects during version upgrades. To perform the automated scan, the command bumps the Telerik UI for ASP.NET Core NuGet package to the latest version.
+
+````SH
+telerik migrate fix --project=MyApp/MyApp.csproj
+````
+
+### Subcommands
+
+| Subcommand | Details |
+| ----- | ----- |
+| `analyze` | Scans `.cshtml` files in a project and reports all detected breaking changes without modifying any files. |
+| `fix` | Scans `.cshtml` files in a project and automatically applies fixes for breaking changes. |
+
+### Common Options (Shared Between Subcommands)
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `--project` | Required | — | Path to `.csproj` file or project directory containing .cshtml files. Accepts absolute or relative paths. Error if missing: `--project is required. Provide a path to a .csproj file or project directory.` |
+| `--no-install` | Boolean | `false` | Skip automatic upgrade of `Telerik.UI.for.AspNet.Core` NuGet package. If package is outdated and this flag is used, command will not continue execution. |
+
+## Set Up Telerik Environment
+
+The `setup` command performs multiple actions at once to configure your Telerik development environment:
+
+* [Log in](#log-in)
+* [Download license key](#get-license-key)
+* [Configure NuGet package source](#set-up-nuget-feed)
+* [Install MCP server(s)](#install-mcp-server)
+
+````SH.skip-repl
+telerik setup aspnetcore
+````
+
+You can use the `setup` command with the following options:
+
+* `--scope` and `--nuget-path` that determine if the Telerik NuGet feed is added to the global `NuGet.Config` file or to a project-specific file.
+* `--force` to overwrite any existing Telerik credentials in the `NuGet.Config` file.
+* `--interactive` to prompt the user at every step. Each prompt shows the default value in brackets and `Enter` accepts it. This option is enabled by default when the standard input is a CLI terminal and [`Console.IsInputRedirected` is `false`](https://learn.microsoft.com/en-us/dotnet/api/system.console.isinputredirected).
+* `--no-interactive` to run without prompting the user and rely on explicit inline options or defaults. This option is enabled by default when the standard input is redirected and [`Console.IsInputRedirected` is `true`](https://learn.microsoft.com/en-us/dotnet/api/system.console.isinputredirected). The option is recommended for automation and CI use.
+
+````SH.skip-repl
+telerik setup aspnetcore --scope project --nuget-path . --force --no-interactive
 ````
 {% endif %}
 

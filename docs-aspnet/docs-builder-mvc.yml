@@ -162,6 +162,7 @@ excluded-files:
 - "**/tutorials/tutorial-saleshub/*"
 - "**/tag-helpers/*"
 - "**/getting-started-core/*"
+- "**/ai-core/*"
 - "**/backwards-compatibility/2018-backwards-compatibility.md"
 - "**/installation/json-serialization.md"
 - "**/installation/adding-client-side-resources/scripts/*"
@@ -488,6 +489,9 @@ meta:
     title: Globalization
     position: 10
   ai:
+    title: AI Tools
+    position: 3
+  ai-core:
     title: AI Tools
     position: 3
   styles-and-layout/less-themes:

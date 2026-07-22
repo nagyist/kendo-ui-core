@@ -177,6 +177,7 @@ excluded-files:
 - "**/start-docs.sh"
 - "**/watch.sh"
 - "**/getting-started-mvc/*"
+- "**/ai/*"
 - "**/html-helpers/helper-basics/build-team-efficiency-dashboard/*"
 - "**/tutorials/*"
 - "**/docs-aspnet/troubleshoot/troubleshooting.md"
@@ -536,6 +537,9 @@ meta:
     title: Styles and Appearance
     position: 9
   ai:
+    title: AI Tools
+    position: 3
+  ai-core:
     title: AI Tools
     position: 3
   html-helpers/pdf/pdfviewer:
